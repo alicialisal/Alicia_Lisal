@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;1,400&amp;family=Epilogue:wght@300;400&amp;family=Space+Grotesk:wght@500;600;700;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#2f3131",
+                        "primary-container": "#050505",
+                        "error-container": "#93000a",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "surface": "#131313",
+                        "surface-container-highest": "#353535",
+                        "inverse-on-surface": "#313030",
+                        "on-primary": "#313030",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#410001",
+                        "on-tertiary-fixed-variant": "#8b1a16",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary": "#690004",
+                        "primary": "#c9c6c5",
+                        "on-surface-variant": "#c4c7c7",
+                        "tertiary-fixed": "#ffdad5",
+                        "on-surface": "#e5e2e1",
+                        "surface-container-low": "#1c1b1b",
+                        "background": "#131313",
+                        "on-primary-fixed-variant": "#474646",
+                        "on-secondary-fixed-variant": "#454747",
+                        "secondary-fixed": "#e2e2e2",
+                        "surface-dim": "#131313",
+                        "on-tertiary-container": "#ce4b40",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "tertiary-fixed-dim": "#ffb4aa",
+                        "surface-variant": "#353535",
+                        "on-background": "#e5e2e1",
+                        "error": "#ffb4ab",
+                        "secondary": "#c6c6c7",
+                        "tertiary": "#ffb4aa",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "on-error": "#690005",
+                        "inverse-primary": "#5f5e5e",
+                        "surface-tint": "#c9c6c5",
+                        "surface-bright": "#393939",
+                        "tertiary-container": "#140000",
+                        "outline-variant": "#444748",
+                        "on-primary-container": "#797777",
+                        "inverse-surface": "#e5e2e1",
+                        "outline": "#8e9192",
+                        "on-secondary-container": "#b4b5b5",
+                        "primary-fixed": "#e5e2e1",
+                        "surface-container": "#20201f",
+                        "secondary-container": "#454747",
+                        "surface-container-high": "#2a2a2a",
+                        "on-primary-fixed": "#1c1b1b",
+                        "electric-coral": "#FF6F61",
+                        "soft-orange": "#FF8C42"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-edge": "64px",
+                        "grid-gutter": "24px",
+                        "stack-md": "16px",
+                        "container-max": "1440px",
+                        "section-gap": "160px",
+                        "stack-lg": "32px",
+                        "stack-sm": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-h1": ["Newsreader"],
+                        "body-md": ["Epilogue"],
+                        "headline-h2": ["Newsreader"],
+                        "body-lg": ["Epilogue"],
+                        "display-xl": ["Newsreader"],
+                        "label-caps": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-h1": ["64px", { "lineHeight": "110%", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "150%", "fontWeight": "400" }],
+                        "headline-h2": ["48px", { "lineHeight": "120%", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "160%", "letterSpacing": "0.01em", "fontWeight": "300" }],
+                        "display-xl": ["96px", { "lineHeight": "100%", "letterSpacing": "-0.04em", "fontWeight": "300" }],
+                        "label-caps": ["12px", { "lineHeight": "100%", "letterSpacing": "0.2em", "fontWeight": "600" }]
+                    },
+                    "animation": {
+                        "reveal-up": "reveal-up 1s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+                        "pulse-slow": "pulse-slow 8s infinite ease-in-out",
+                    },
+                    "keyframes": {
+                        "reveal-up": {
+                            "0%": { opacity: "0", transform: "translateY(40px)" },
+                            "100%": { opacity: "1", transform: "translateY(0)" }
+                        },
+                        "pulse-slow": {
+                            "0%, 100%": { opacity: "0.15", transform: "scale(1)" },
+                            "50%": { opacity: "0.25", transform: "scale(1.1)" }
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            background-color: #050505;
+            background-image:
+                radial-gradient(circle at 0% 0%, rgba(255, 140, 66, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(255, 140, 66, 0.05) 0%, transparent 50%);
+            background-attachment: fixed;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+
+        .coral-button {
+            background-color: #FF6F61;
+            color: black;
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+            border-radius: 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .coral-button:hover {
+            background-color: #FF8C42;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -10px rgba(255, 111, 97, 0.5);
+        }
+
+        .ghost-button {
+            border: 1px solid white;
+            background: transparent;
+            color: white;
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+            border-radius: 0;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .ghost-button:hover {
+            background-color: white;
+            color: black;
+            transform: translateY(-2px);
+        }
+
+        .magazine-number {
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+            color: #FF6F61;
+            font-size: 4rem;
+            opacity: 0.5;
+            line-height: 1;
+        }
+
+        .vertical-ribbon {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+        }
+
+        .glow-bg {
+            position: fixed;
+            width: 60vw;
+            height: 60vw;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 111, 97, 0.15) 0%, rgba(255, 140, 66, 0.08) 50%, transparent 70%);
+            filter: blur(80px);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .reveal-section {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hover Glow for Project Cards */
+        .project-card:hover .project-image-container {
+            box-shadow: 0 0 30px rgba(255, 111, 97, 0.2);
+        }
+    </style>
+</head>
+
+<body class="font-body-md text-on-surface selection:bg-electric-coral selection:text-black">
+    <!-- Atmospheric Globs -->
+    <div class="glow-bg top-[-10%] right-[-20%] animate-pulse-slow"></div>
+    <div class="glow-bg top-[40%] left-[-20%] animate-pulse-slow" style="animation-delay: -2s;"></div>
+    <div class="glow-bg bottom-[-10%] right-[-10%] animate-pulse-slow" style="animation-delay: -4s;"></div>
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-[#050505]/90 backdrop-blur-sm border-b border-white/10 h-20">
+        <div class="flex justify-between items-center w-full px-8 md:px-16 h-full max-w-[1440px] mx-auto">
+            <a class="text-xl font-black tracking-tighter uppercase text-white font-['Space_Grotesk'] hover:text-electric-coral transition-colors duration-300"
+                href="#">
+                ALICIA LISAL
+            </a>
+            <div class="hidden md:flex items-center space-x-12">
+                <a class="text-white border-b border-rose-500 pb-1 font-label-caps text-[10px] tracking-[0.2em] uppercase hover:text-soft-orange transition-colors duration-300 transform hover:translate-y-[-1px]"
+                    href="#work">Work</a>
+                <a class="text-zinc-500 uppercase text-[10px] tracking-[0.2em] font-medium font-label-caps hover:text-soft-orange transition-colors duration-300 transform hover:translate-y-[-1px]"
+                    href="#expertise">Expertise</a>
+                <a class="text-zinc-500 uppercase text-[10px] tracking-[0.2em] font-medium font-label-caps hover:text-soft-orange transition-colors duration-300 transform hover:translate-y-[-1px]"
+                    href="#chronicle">Chronicle</a>
+                <a class="text-zinc-500 uppercase text-[10px] tracking-[0.2em] font-medium font-label-caps hover:text-soft-orange transition-colors duration-300 transform hover:translate-y-[-1px]"
+                    href="#contact">Contact</a>
+            </div>
+            <button class="coral-button px-6 py-3 font-label-caps text-[10px] tracking-widest font-bold">
+                DOWNLOAD_CV
+            </button>
+        </div>
+    </nav>
+    <main>
+        <!-- Hero Section -->
+        <section
+            class="min-h-screen flex flex-col justify-center px-8 md:px-16 max-w-[1440px] mx-auto pt-20 reveal-section">
+            <div class="grid grid-cols-12 gap-grid-gutter items-center">
+                <div class="col-span-12 lg:col-span-8 z-10">
+                    <span class="font-label-caps text-electric-coral mb-stack-md block tracking-[0.3em]">ALICIA JUANITA
+                        LISAL</span>
+                    <h1 class="font-display-xl text-white mb-stack-lg leading-none">
+                        Engineering the Future through <span class="italic font-headline-h1 text-soft-orange">Code &amp;
+                            Creativity</span>
+                    </h1>
+                    <p class="font-body-lg text-primary max-w-2xl mb-stack-lg">
+                        A software engineering student bridging the gap between technical precision and human-centric
+                        design. Crafting digital experiences that are as performant as they are poetic.
+                    </p>
+                    <div class="flex gap-stack-md">
+                        <button class="coral-button px-8 py-4 font-label-caps text-[14px]">View Work</button>
+                        <button class="ghost-button px-8 py-4 font-label-caps text-[14px]">Let's Connect</button>
+                    </div>
+                </div>
+                <div class="col-span-12 lg:col-span-4 relative mt-12 lg:mt-0">
+                    <div class="aspect-[3/4] bg-surface-container overflow-hidden relative group">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-tr from-soft-orange/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10 pointer-events-none">
+                        </div>
+                        <img alt="Portrait of Alicia"
+                            class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:scale-[1.05] transition-all duration-1000 ease-out"
+                            data-alt="Modern high-fashion style portrait of a software engineer woman in tech, cinematic low-key lighting, noir aesthetic with sharp shadows."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCknVQoJdn9mAJ2ibz11ASF4PdPa_ZSys2uC5cNrfWNvwjjQMd1xB2cyj-HIBNS9iED5NAaPuB_DEhrosaVNgv71suQ7jNsbNkQ6TXswFZrz6mQ0FZstZSRialU11ty15Mw9kXfbURa1-WZ8mOTSdulqVldYrhgHzJLGxSSc1q9-8gzU-oUdQA6qwFnEcZ8QImfvyUQWNhXlp8ewm8KxBFAGaq-WBGSMlWCQx3z1KWviiwrr-RTkIIBTciyvGOcYGByTrxYyTvMA" />
+                    </div>
+                    <div
+                        class="absolute -bottom-8 -left-8 vertical-ribbon font-label-caps text-zinc-700 text-[10px] tracking-widest uppercase">
+                        ESTABLISHED MMXXIV — BUILT TO LAST
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About Section -->
+        <section class="py-section-gap px-8 md:px-16 max-w-[1440px] mx-auto overflow-hidden reveal-section">
+            <div class="grid grid-cols-12 gap-grid-gutter">
+                <div class="col-span-12 md:col-span-1 flex items-start">
+                    <span class="magazine-number text-soft-orange">01</span>
+                </div>
+                <div class="col-span-12 md:col-span-5">
+                    <h2 class="font-headline-h2 text-white mb-stack-lg">The Narrative</h2>
+                    <div class="space-y-stack-md font-body-lg text-primary">
+                        <p>My journey as a software engineering student isn't just about syntax and algorithms; it's
+                            about the architecture of possibility. I approach every codebase as a blank canvas where
+                            logic meets aesthetic intent.</p>
+                        <p>Currently pursuing my degree, I've dedicated myself to mastering the intricacies of
+                            full-stack development while maintaining a rigorous focus on design systems and user
+                            empathy.</p>
+                    </div>
+                </div>
+                <div class="col-span-12 md:col-span-6 flex justify-end">
+                    <div class="w-full h-[500px] bg-surface-container-high relative group overflow-hidden">
+                        <div
+                            class="absolute inset-0 bg-soft-orange/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10">
+                        </div>
+                        <img alt="Tech abstract"
+                            class="w-full h-full object-cover opacity-40 mix-blend-screen group-hover:scale-110 transition-transform duration-1000"
+                            data-alt="Abstract digital motherboard patterns with neon electric coral circuits glowing in the dark, futuristic technical atmosphere."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeDkh-M88DeIPxVCP_VU2_M1olbbk3Mc7TK6PtYncQXfDeiSyOz-o8bIaRq-iINACBl4pYaJfwESkkErytuAq55qC7Z2LlXbj-a8FIhJvYKm9sz85NWV19UMXGOUZ5b9fDiE3IvwbnQPXgy6L0q4YOfQfRBPFrfuC41sl1g84EpeCtiq8xmE3WhMzxo9SNvvgmqGzlFS0C9WTiHe90sdN4pjdtVceCzIozSmPe8-qYD415566ZyBBM928NlTtnzLjkFOgwq-5wMQ" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Skills Section -->
+        <section class="py-section-gap bg-[#0e0e0e] relative reveal-section" id="expertise">
+            <div class="max-w-[1440px] mx-auto px-8 md:px-16">
+                <div class="flex justify-between items-end mb-24 border-b border-white/10 pb-stack-md relative z-10">
+                    <div>
+                        <span class="font-label-caps text-zinc-500 mb-2 block uppercase tracking-widest">Toolkit</span>
+                        <h2 class="font-headline-h2 text-white italic">Capabilities</h2>
+                    </div>
+                    <span class="magazine-number text-soft-orange">02</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-24 relative z-10">
+                    <div class="group">
+                        <h3
+                            class="font-label-caps text-electric-coral mb-stack-lg text-sm group-hover:text-soft-orange transition-colors">
+                            LANGUAGES</h3>
+                        <ul class="space-y-4 font-headline-h2 text-primary-fixed-dim text-3xl">
+                            <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
+                                JavaScript (ES6+)</li>
+                            <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
+                                TypeScript</li>
+                            <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
+                                Python</li>
+                            <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
+                                SQL / NoSQL</li>
+                        </ul>
+                    </div>
+                    <div class="group">
+                        <h3
+                            class="font-label-caps text-electric-coral mb-stack-lg text-sm group-hover:text-soft-orange transition-colors">
+                            FRAMEWORKS</h3>
+                        <ul class="space-y-4 font-headline-h2 text-primary-fixed-dim text-3xl">
+                            <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
+                                React / Next.js</li>
+                            <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
+                                Node.js</li>
+                            <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
+                                Tailwind CSS</li>
+                            <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
+                                Django</li>
+                        </ul>
+                    </div>
+                    <div class="group">
+                        <h3
+                            class="font-label-caps text-electric-coral mb-stack-lg text-sm group-hover:text-soft-orange transition-colors">
+                            TOOLS</h3>
+                        <ul class="space-y-4 font-headline-h2 text-primary-fixed-dim text-3xl">
+                            <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
+                                Git / GitHub</li>
+                            <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
+                                Figma</li>
+                            <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
+                                Docker</li>
+                            <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
+                                Vercel / AWS</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Inner Section Glow -->
+            <div
+                class="absolute inset-0 bg-radial-gradient from-soft-orange/5 via-transparent to-transparent pointer-events-none">
+            </div>
+        </section>
+        <!-- Projects Section -->
+        <section class="py-section-gap px-8 md:px-16 max-w-[1440px] mx-auto reveal-section" id="work">
+            <div class="flex items-center gap-stack-lg mb-24">
+                <h2 class="font-display-xl text-white italic">Selected Projects</h2>
+                <div class="h-px flex-grow bg-gradient-to-r from-white/10 via-soft-orange/20 to-transparent"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-32">
+                <!-- Project 1 -->
+                <div class="group cursor-pointer project-card">
+                    <div
+                        class="aspect-video bg-surface overflow-hidden border border-white/5 mb-stack-lg project-image-container transition-all duration-500">
+                        <img alt="Interactive Design System"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                            data-alt="Clean minimalist web interface design system UI components floating in 3D space with high contrast shadows."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKS1vFB1zhzLdvnz6T5NEA_G3C2V-d5rEzQcV2VLqOCGbTD3BOuM7_mphXhDSPgWDnO26bJmasqscakTPAPZTmgzuPZ9KGT0CiabV4eu8RIbTBcXa0ElMJvUbK5KR07kXKUWT4AM8uW4RpPmTML3FrwoPsDOk5SBIyEDabvpkfov0NATKy-RgBXD40Bt5B0UtgLMGFPjuU_S3ZB02p3ZUDZp2JvDDQqkBI2iWSndtZiJU17cOSGPnXdwYkS_GVP6GAih_TBwElYQ" />
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3
+                                class="font-headline-h2 text-white text-2xl mb-2 group-hover:text-soft-orange transition-colors">
+                                Interactive Design System</h3>
+                            <p class="font-label-caps text-zinc-500 text-[10px]">React • Tailwind • Framer Motion</p>
+                        </div>
+                        <span
+                            class="material-symbols-outlined text-electric-coral transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">arrow_outward</span>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="group cursor-pointer mt-0 md:mt-24 project-card">
+                    <div
+                        class="aspect-video bg-surface overflow-hidden border border-white/5 mb-stack-lg project-image-container transition-all duration-500">
+                        <img alt="EcoTrack"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                            data-alt="Sustainability tracker dashboard mobile app screen showing green energy metrics and dark mode charts."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuArA3PCh5sCfpu4L3IZAFnTILAkNqv6TSe2WHrtOMOqV23zNUGHJLAUWoeAO7A-4voJx_04H6pmk0ZIGC4aF8WMJchvs39klV4KdBwyRanoM3Nmw8RC0asrS5TOJA-RCgsnE76Gj2L-hSne-NCa6z_crefmG-zNQbPCjnH6A4l_kzjBsZckwJqoOJ29OimtM_TRojeZOjbtfwlI9A-mjEItMel11xKvujOVR0hB2plVYfGVLU4r8y_BL3zNQLXRzjyEVslmUDmGrg" />
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3
+                                class="font-headline-h2 text-white text-2xl mb-2 group-hover:text-soft-orange transition-colors">
+                                EcoTrack</h3>
+                            <p class="font-label-caps text-zinc-500 text-[10px]">Next.js • PostgreSQL • Chart.js</p>
+                        </div>
+                        <span
+                            class="material-symbols-outlined text-electric-coral transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">arrow_outward</span>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="group cursor-pointer project-card">
+                    <div
+                        class="aspect-video bg-surface overflow-hidden border border-white/5 mb-stack-lg project-image-container transition-all duration-500">
+                        <img alt="Smart Search"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                            data-alt="Abstract visualization of a neural network or data connectivity with glowing white nodes on black background."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9xNz8ghdc8JZnimbL3KWbPgsn97jVqgAkbqwj31tzTeYy6QqfITn8aCLlLlMHVUywaTYx0Xbz63Y_qK-offYDrVcYqaonF1HxBP1d9Ue7QkTVZs8ICZxQfdCd9m8P-BTLoZDQv6rAnAI-vQzB8dVgVSRuAdrsGmF5EcWAhRe0ihKzY3SjGgYbRjDl9Gfv5MHJZ26PAhl53wBdFcmo9L3VkKDuX-bsSKbmT1TPtFTgj89m1sZSBssen37ZFpQNUzdcsgL9TEFPuQ" />
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3
+                                class="font-headline-h2 text-white text-2xl mb-2 group-hover:text-soft-orange transition-colors">
+                                Smart Search</h3>
+                            <p class="font-label-caps text-zinc-500 text-[10px]">Python • FastAPI • Vector DB</p>
+                        </div>
+                        <span
+                            class="material-symbols-outlined text-electric-coral transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">arrow_outward</span>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="group cursor-pointer mt-0 md:mt-24 project-card">
+                    <div
+                        class="aspect-video bg-surface overflow-hidden border border-white/5 mb-stack-lg project-image-container transition-all duration-500">
+                        <img alt="Portfolio v1"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                            data-alt="Graphic designer portfolio website display on a high-end monitor in a dark studio setting."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX2VdTOKbtF3eeo98mCnblz6nbK7o3TcRu0omwoc_O7rw149LzECMSN6KWAGPEYUYPlU5unDwvuTsPcSXddZM5bMHCi6AbG-YD70XOPN9ezYnjsYCZAHo9CCwtLl4d5n2oiF_qHA9VArwHMV9eKYvsAN0YlqSjz-y0PtyAXWLY7f2E80RS_BTnVqh6ZU8Anmkrw03BDdCgjFp-FirP02UZ4S81Hc-VvVO5B2amIsTrfYTm4QrW-8b8mDzXLo1UsuQNkb9T7aW7JQ" />
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3
+                                class="font-headline-h2 text-white text-2xl mb-2 group-hover:text-soft-orange transition-colors">
+                                Portfolio v1</h3>
+                            <p class="font-label-caps text-zinc-500 text-[10px]">HTML • CSS • Vanilla JS</p>
+                        </div>
+                        <span
+                            class="material-symbols-outlined text-electric-coral transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">arrow_outward</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Experience Section -->
+        <section class="py-section-gap bg-[#121212] border-y border-white/5 relative overflow-hidden reveal-section">
+            <div class="absolute inset-0 bg-gradient-to-b from-soft-orange/[0.03] to-transparent pointer-events-none">
+            </div>
+            <div class="max-w-[1440px] mx-auto px-8 md:px-16 relative z-10">
+                <div class="grid grid-cols-12 gap-grid-gutter">
+                    <div class="col-span-12 md:col-span-4">
+                        <span class="font-label-caps text-electric-coral mb-stack-md block">RESUME</span>
+                        <h2 class="font-display-xl text-white">Experience</h2>
+                    </div>
+                    <div class="col-span-12 md:col-span-8">
+                        <div class="space-y-16">
+                            <div
+                                class="flex flex-col md:flex-row justify-between border-b border-white/10 pb-8 hover:bg-soft-orange/[0.03] transition-colors p-4 -mx-4 group cursor-default">
+                                <div class="flex-grow">
+                                    <h3
+                                        class="font-headline-h2 text-white text-3xl group-hover:italic group-hover:text-soft-orange transition-all duration-500">
+                                        Senior Coding Mentor</h3>
+                                    <p class="font-label-caps text-zinc-500">University Tech Hub</p>
+                                </div>
+                                <span
+                                    class="font-label-caps text-electric-coral mt-4 md:mt-0 opacity-80 group-hover:opacity-100">2023
+                                    — PRESENT</span>
+                            </div>
+                            <div
+                                class="flex flex-col md:flex-row justify-between border-b border-white/10 pb-8 hover:bg-soft-orange/[0.03] transition-colors p-4 -mx-4 group cursor-default">
+                                <div class="flex-grow">
+                                    <h3
+                                        class="font-headline-h2 text-white text-3xl group-hover:italic group-hover:text-soft-orange transition-all duration-500">
+                                        Frontend Intern</h3>
+                                    <p class="font-label-caps text-zinc-500">Editorial Design Collective</p>
+                                </div>
+                                <span
+                                    class="font-label-caps text-electric-coral mt-4 md:mt-0 opacity-80 group-hover:opacity-100">SUMMER
+                                    2023</span>
+                            </div>
+                            <div
+                                class="flex flex-col md:flex-row justify-between border-b border-white/10 pb-8 hover:bg-soft-orange/[0.03] transition-colors p-4 -mx-4 group cursor-default">
+                                <div class="flex-grow">
+                                    <h3
+                                        class="font-headline-h2 text-white text-3xl group-hover:italic group-hover:text-soft-orange transition-all duration-500">
+                                        Hackathon Lead</h3>
+                                    <p class="font-label-caps text-zinc-500">Regional Innovation Summit</p>
+                                </div>
+                                <span
+                                    class="font-label-caps text-electric-coral mt-4 md:mt-0 opacity-80 group-hover:opacity-100">2022</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Thoughts Section -->
+        <section class="py-section-gap px-8 md:px-16 max-w-[1440px] mx-auto reveal-section" id="chronicle">
+            <div class="flex justify-between items-center mb-16">
+                <h2 class="font-headline-h2 text-white italic">The Chronicle</h2>
+                <button class="ghost-button px-6 py-2 font-label-caps text-[10px]">Read All</button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <article
+                    class="p-12 border border-white/10 flex flex-col gap-8 group hover:border-soft-orange/30 transition-all duration-500 relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-tr from-soft-orange/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <span class="font-label-caps text-zinc-600 relative z-10">SEPTEMBER 12, 2024</span>
+                    <h3
+                        class="font-headline-h2 text-white leading-tight group-hover:text-soft-orange transition-colors relative z-10">
+                        The Intersection of Modern Typography and Front-end Architecture.</h3>
+                    <p class="font-body-md text-primary relative z-10">Exploring how variable fonts are revolutionizing
+                        the way we think about responsive text in high-end web experiences.</p>
+                    <a class="font-label-caps text-white inline-flex items-center gap-2 border-b border-white w-fit pb-1 group-hover:border-soft-orange group-hover:text-soft-orange transition-all duration-300 relative z-10"
+                        href="#">CONTINUE READING</a>
+                </article>
+                <article
+                    class="p-12 border border-white/10 flex flex-col gap-8 group hover:border-soft-orange/30 transition-all duration-500 relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-tr from-soft-orange/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <span class="font-label-caps text-zinc-600 relative z-10">AUGUST 24, 2024</span>
+                    <h3
+                        class="font-headline-h2 text-white leading-tight group-hover:text-soft-orange transition-colors relative z-10">
+                        Building Scalable Design Systems in Rapid Student Cycles.</h3>
+                    <p class="font-body-md text-primary relative z-10">A deep dive into maintaining code quality and
+                        aesthetic consistency when shipping fast-paced academic projects.</p>
+                    <a class="font-label-caps text-white inline-flex items-center gap-2 border-b border-white w-fit pb-1 group-hover:border-soft-orange group-hover:text-soft-orange transition-all duration-300 relative z-10"
+                        href="#">CONTINUE READING</a>
+                </article>
+            </div>
+        </section>
+        <!-- Contact CTA -->
+        <section class="py-section-gap px-8 md:px-16 text-center border-t border-white/10 relative reveal-section"
+            id="contact">
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-soft-orange/10 blur-[120px] rounded-full pointer-events-none">
+            </div>
+            <span class="font-label-caps text-electric-coral mb-stack-md block tracking-[0.3em]">OPEN FOR
+                COLLABORATION</span>
+            <h2 class="font-display-xl text-white mb-stack-lg max-w-4xl mx-auto italic">Let's create something
+                remarkable together.</h2>
+            <div class="flex justify-center mt-12">
+                <a class="text-[8vw] font-['Space_Grotesk'] font-black uppercase text-white hover:text-soft-orange transition-all duration-500 leading-none group relative inline-block"
+                    href="mailto:hello@aliciajuanita.com">
+                    SAY_HELLO_
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-2 bg-soft-orange group-hover:w-full transition-all duration-500 ease-out"></span>
+                </a>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full mt-24 border-t border-white/10 bg-[#050505]">
+        <div
+            class="flex flex-col md:flex-row justify-between items-center w-full py-16 px-16 max-w-[1440px] mx-auto gap-8">
+            <div class="text-lg font-bold text-white uppercase font-['Space_Grotesk'] group cursor-default">
+                ALICIA-<span class="group-hover:text-soft-orange transition-colors">LISAL</span>
+            </div>
+            <div class="flex gap-12">
+                <a class="text-zinc-600 font-['Space_Grotesk'] text-[10px] tracking-widest uppercase hover:text-soft-orange transition-all hover:translate-y-[-2px] hover:underline decoration-soft-orange underline-offset-8"
+                    href="#">GITHUB</a>
+                <a class="text-zinc-600 font-['Space_Grotesk'] text-[10px] tracking-widest uppercase hover:text-soft-orange transition-all hover:translate-y-[-2px] hover:underline decoration-soft-orange underline-offset-8"
+                    href="#">LINKEDIN</a>
+                <a class="text-zinc-600 font-['Space_Grotesk'] text-[10px] tracking-widest uppercase hover:text-soft-orange transition-all hover:translate-y-[-2px] hover:underline decoration-soft-orange underline-offset-8"
+                    href="#">TWITTER</a>
+                <a class="text-zinc-600 font-['Space_Grotesk'] text-[10px] tracking-widest uppercase hover:text-soft-orange transition-all hover:translate-y-[-2px] hover:underline decoration-soft-orange underline-offset-8"
+                    href="#">EMAIL</a>
+            </div>
+            <div class="font-['Space_Grotesk'] text-[10px] tracking-widest uppercase text-zinc-500">
+                © 2026 ALICIA LISAL. CRAFTED WITH PRECISION.
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Reveal Intersection Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -10% 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Subtle Parallax for Glows
+        document.addEventListener('mousemove', (e) => {
+            const glows = document.querySelectorAll('.glow-bg');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+
+            glows.forEach((glow, index) => {
+                const speed = (index + 1) * 20;
+                const moveX = (x - 0.5) * speed;
+                const moveY = (y - 0.5) * speed;
+                glow.style.transform = `translate(${moveX}px, ${moveY}px) scale(${1 + Math.abs(x - 0.5) * 0.1})`;
+            });
+        });
+    </script>
+</body>
+
+</html>
