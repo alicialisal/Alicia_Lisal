@@ -89,6 +89,7 @@
                         "headline-h2": ["Newsreader"],
                         "body-lg": ["Epilogue"],
                         "display-xl": ["Newsreader"],
+                        "display-2xl": ["Newsreader"],
                         "label-caps": ["Space Grotesk"]
                     },
                     "fontSize": {
@@ -97,6 +98,7 @@
                         "headline-h2": ["48px", { "lineHeight": "120%", "fontWeight": "400" }],
                         "body-lg": ["18px", { "lineHeight": "160%", "letterSpacing": "0.01em", "fontWeight": "300" }],
                         "display-xl": ["96px", { "lineHeight": "100%", "letterSpacing": "-0.04em", "fontWeight": "300" }],
+                        "display-2xl": ["300px", { "lineHeight": "100%", "letterSpacing": "-0.04em", "fontWeight": "300" }],
                         "label-caps": ["12px", { "lineHeight": "100%", "letterSpacing": "0.2em", "fontWeight": "600" }]
                     },
                     "animation": {
@@ -216,11 +218,13 @@
             </a>
             <div class="hidden md:flex items-center space-x-12">
                 <a class="nav-link text-white border-b border-rose-500 pb-1 font-label-caps text-[10px] tracking-[0.2em] uppercase hover:text-soft-orange transition-colors duration-300 transform hover:translate-y-[-1px]"
-                    href="#work">Work</a>
+                    href="#about">About</a>
                 <a class="nav-link text-zinc-500 uppercase text-[10px] tracking-[0.2em] font-medium font-label-caps hover:text-soft-orange transition-colors duration-300 transform hover:translate-y-[-1px]"
                     href="#expertise">Expertise</a>
                 <a class="nav-link text-zinc-500 uppercase text-[10px] tracking-[0.2em] font-medium font-label-caps hover:text-soft-orange transition-colors duration-300 transform hover:translate-y-[-1px]"
-                    href="#chronicle">Chronicle</a>
+                    href="#work">Work</a>
+                <a class="nav-link text-zinc-500 uppercase text-[10px] tracking-[0.2em] font-medium font-label-caps hover:text-soft-orange transition-colors duration-300 transform hover:translate-y-[-1px]"
+                    href="#publication">Publications</a>
                 <a class="nav-link text-zinc-500 uppercase text-[10px] tracking-[0.2em] font-medium font-label-caps hover:text-soft-orange transition-colors duration-300 transform hover:translate-y-[-1px]"
                     href="#contact">Contact</a>
             </div>
@@ -232,7 +236,8 @@
     <main>
         <!-- Hero Section -->
         <section
-            class="min-h-screen flex flex-col justify-center px-8 md:px-16 max-w-[1440px] mx-auto pt-20 reveal-section">
+            class="min-h-screen flex flex-col justify-center px-8 md:px-16 max-w-[1440px] mx-auto pt-20 reveal-section"
+            id="about">
             <div class="grid grid-cols-12 gap-grid-gutter items-center">
                 <div class="col-span-12 lg:col-span-8 z-10">
                     <span class="font-label-caps text-electric-coral mb-stack-md block tracking-[0.3em]">ALICIA JUANITA
@@ -274,7 +279,7 @@
                     <span class="magazine-number text-soft-orange">01</span>
                 </div>
                 <div class="col-span-12 md:col-span-5">
-                    <h2 class="font-headline-h2 text-white mb-stack-lg">The Narrative</h2>
+                    <h2 class="font-display-2xl text-white mb-stack-lg">The Narrative</h2>
                     <div class="space-y-stack-md font-body-lg text-primary">
                         <p>My journey as a software engineering student isn't just about syntax and algorithms; it's
                             about the architecture of possibility. I approach every codebase as a blank canvas where
@@ -303,7 +308,7 @@
                 <div class="flex justify-between items-end mb-24 border-b border-white/10 pb-stack-md relative z-10">
                     <div>
                         <span class="font-label-caps text-zinc-500 mb-2 block uppercase tracking-widest">Toolkit</span>
-                        <h2 class="font-headline-h2 text-white italic">Capabilities</h2>
+                        <h2 class="font-display-2xl text-white italic">Capabilities</h2>
                     </div>
                     <span class="magazine-number text-soft-orange">02</span>
                 </div>
@@ -364,92 +369,99 @@
         <section class="py-section-gap px-8 md:px-16 max-w-[1440px] mx-auto reveal-section" id="work">
             <div class="flex justify-between items-end mb-24 gap-8">
                 <div class="flex items-center gap-stack-lg flex-grow">
-                    <h2 class="font-display-xl text-white italic">Selected Projects</h2>
+                    <h2 class="font-display-2xl text-white italic">Selected Projects</h2>
                     <div class="h-px flex-grow bg-gradient-to-r from-white/10 via-soft-orange/20 to-transparent"></div>
                 </div>
                 <span class="magazine-number text-soft-orange">03</span>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-32">
                 <!-- Project 1 -->
-                <div class="group cursor-pointer project-card">
+                <a href="https://github.com/alicialisal/ReplikaGo-ARGame.git"
+                    class="group cursor-pointer project-card block">
                     <div
                         class="aspect-video bg-surface overflow-hidden border border-white/5 mb-stack-lg project-image-container transition-all duration-500">
-                        <img alt="Interactive Design System"
+                        <img alt="ReplikaGO"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                             data-alt="Clean minimalist web interface design system UI components floating in 3D space with high contrast shadows."
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKS1vFB1zhzLdvnz6T5NEA_G3C2V-d5rEzQcV2VLqOCGbTD3BOuM7_mphXhDSPgWDnO26bJmasqscakTPAPZTmgzuPZ9KGT0CiabV4eu8RIbTBcXa0ElMJvUbK5KR07kXKUWT4AM8uW4RpPmTML3FrwoPsDOk5SBIyEDabvpkfov0NATKy-RgBXD40Bt5B0UtgLMGFPjuU_S3ZB02p3ZUDZp2JvDDQqkBI2iWSndtZiJU17cOSGPnXdwYkS_GVP6GAih_TBwElYQ" />
+                            src="ReplikaGO.png" />
                     </div>
                     <div class="flex justify-between items-start">
                         <div>
                             <h3
                                 class="font-headline-h2 text-white text-2xl mb-2 group-hover:text-soft-orange transition-colors">
-                                Interactive Design System</h3>
-                            <p class="font-label-caps text-zinc-500 text-[10px]">React • Tailwind • Framer Motion</p>
+                                ReplikaGO: An AR Guide to Balla Lompoa Museum</h3>
+                            <p class="font-label-caps text-zinc-500 text-[10px]">Augmented Reality • Vuforia • Game
+                                Development • Unity</p>
                         </div>
                         <span
                             class="material-symbols-outlined text-electric-coral transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">arrow_outward</span>
                     </div>
-                </div>
+                </a>
                 <!-- Project 2 -->
-                <div class="group cursor-pointer mt-0 md:mt-24 project-card">
+                <a href="https://github.com/KingPublic/LokaIlmu_FE_Guru"
+                    class="group cursor-pointer mt-0 md:mt-24 project-card block">
                     <div
                         class="aspect-video bg-surface overflow-hidden border border-white/5 mb-stack-lg project-image-container transition-all duration-500">
-                        <img alt="EcoTrack"
+                        <img alt="Lokailmu"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                            data-alt="Sustainability tracker dashboard mobile app screen showing green energy metrics and dark mode charts."
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuArA3PCh5sCfpu4L3IZAFnTILAkNqv6TSe2WHrtOMOqV23zNUGHJLAUWoeAO7A-4voJx_04H6pmk0ZIGC4aF8WMJchvs39klV4KdBwyRanoM3Nmw8RC0asrS5TOJA-RCgsnE76Gj2L-hSne-NCa6z_crefmG-zNQbPCjnH6A4l_kzjBsZckwJqoOJ29OimtM_TRojeZOjbtfwlI9A-mjEItMel11xKvujOVR0hB2plVYfGVLU4r8y_BL3zNQLXRzjyEVslmUDmGrg" />
+                            data-alt="LokaIlmu is a mobile application that provides digital learning and mentorship services for teachers. The application allows teachers to access educational resources, connect with mentors, and track their professional development."
+                            src="1751382757994.jpg" />
                     </div>
                     <div class="flex justify-between items-start">
                         <div>
                             <h3
                                 class="font-headline-h2 text-white text-2xl mb-2 group-hover:text-soft-orange transition-colors">
-                                EcoTrack</h3>
-                            <p class="font-label-caps text-zinc-500 text-[10px]">Next.js • PostgreSQL • Chart.js</p>
+                                Lokailmu: Empowering Teachers Through Digital Learning & Mentorship</h3>
+                            <p class="font-label-caps text-zinc-500 text-[10px]">Database Design • Flutter • Solution
+                                Making</p>
                         </div>
                         <span
                             class="material-symbols-outlined text-electric-coral transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">arrow_outward</span>
                     </div>
-                </div>
+                </a>
                 <!-- Project 3 -->
-                <div class="group cursor-pointer project-card">
+                <a href="https://github.com/alicialisal/ALP-Group1-MomEase.git"
+                    class="group cursor-pointer project-card block">
                     <div
                         class="aspect-video bg-surface overflow-hidden border border-white/5 mb-stack-lg project-image-container transition-all duration-500">
-                        <img alt="Smart Search"
+                        <img alt="MomEase"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                            data-alt="Abstract visualization of a neural network or data connectivity with glowing white nodes on black background."
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9xNz8ghdc8JZnimbL3KWbPgsn97jVqgAkbqwj31tzTeYy6QqfITn8aCLlLlMHVUywaTYx0Xbz63Y_qK-offYDrVcYqaonF1HxBP1d9Ue7QkTVZs8ICZxQfdCd9m8P-BTLoZDQv6rAnAI-vQzB8dVgVSRuAdrsGmF5EcWAhRe0ihKzY3SjGgYbRjDl9Gfv5MHJZ26PAhl53wBdFcmo9L3VkKDuX-bsSKbmT1TPtFTgj89m1sZSBssen37ZFpQNUzdcsgL9TEFPuQ" />
+                            data-alt="MomEase: Journaling and Mood Tracking, Blogs, AI Chatbot for Maternal Mental Wellness"
+                            src="1751381692807.jpg" />
                     </div>
                     <div class="flex justify-between items-start">
                         <div>
                             <h3
                                 class="font-headline-h2 text-white text-2xl mb-2 group-hover:text-soft-orange transition-colors">
-                                Smart Search</h3>
-                            <p class="font-label-caps text-zinc-500 text-[10px]">Python • FastAPI • Vector DB</p>
+                                MomEase: AI Companion for Maternal Mental Wellness</h3>
+                            <p class="font-label-caps text-zinc-500 text-[10px]">Laravel • PHP • MySQL • UI/UX Design
+                            </p>
                         </div>
                         <span
                             class="material-symbols-outlined text-electric-coral transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">arrow_outward</span>
                     </div>
-                </div>
+                </a>
                 <!-- Project 4 -->
-                <div class="group cursor-pointer mt-0 md:mt-24 project-card">
+                <a href="https://github.com/chaidenfoanto/Group-3---Project-NPLC"
+                    class="group cursor-pointer mt-0 md:mt-24 project-card block">
                     <div
                         class="aspect-video bg-surface overflow-hidden border border-white/5 mb-stack-lg project-image-container transition-all duration-500">
-                        <img alt="Portfolio v1"
+                        <img alt="NPLC Website"
                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                            data-alt="Graphic designer portfolio website display on a high-end monitor in a dark studio setting."
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX2VdTOKbtF3eeo98mCnblz6nbK7o3TcRu0omwoc_O7rw149LzECMSN6KWAGPEYUYPlU5unDwvuTsPcSXddZM5bMHCi6AbG-YD70XOPN9ezYnjsYCZAHo9CCwtLl4d5n2oiF_qHA9VArwHMV9eKYvsAN0YlqSjz-y0PtyAXWLY7f2E80RS_BTnVqh6ZU8Anmkrw03BDdCgjFp-FirP02UZ4S81Hc-VvVO5B2amIsTrfYTm4QrW-8b8mDzXLo1UsuQNkb9T7aW7JQ" />
+                            data-alt="NPLC Website: Digital Platform for Real-Time Rally Game Management"
+                            src="1751381102396.jpg" />
                     </div>
                     <div class="flex justify-between items-start">
                         <div>
                             <h3
                                 class="font-headline-h2 text-white text-2xl mb-2 group-hover:text-soft-orange transition-colors">
-                                Portfolio v1</h3>
-                            <p class="font-label-caps text-zinc-500 text-[10px]">HTML • CSS • Vanilla JS</p>
+                                NPLC Website: Digital Platform for Real-Time Rally Game Management</h3>
+                            <p class="font-label-caps text-zinc-500 text-[10px]">HTML • CSS • JavaScript</p>
                         </div>
                         <span
                             class="material-symbols-outlined text-electric-coral transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">arrow_outward</span>
                     </div>
-                </div>
+                </a>
             </div>
         </section>
         <!-- Experience Section -->
@@ -461,7 +473,7 @@
                     <div class="col-span-12 md:col-span-4">
                         <span class="magazine-number text-soft-orange block mb-8">04</span>
                         <span class="font-label-caps text-electric-coral mb-stack-md block">RESUME</span>
-                        <h2 class="font-display-xl text-white">Experience</h2>
+                        <h2 class="font-display-2xl text-white">Experience</h2>
                     </div>
                     <div class="col-span-12 md:col-span-8">
                         <div class="space-y-16">
@@ -506,42 +518,64 @@
             </div>
         </section>
         <!-- Thoughts Section -->
-        <section class="py-section-gap px-8 md:px-16 max-w-[1440px] mx-auto reveal-section" id="chronicle">
+        <section class="py-section-gap px-8 md:px-16 max-w-[1440px] mx-auto reveal-section" id="publication">
             <div class="flex justify-between items-center mb-16 gap-8">
-                <h2 class="font-headline-h2 text-white italic">The Chronicle</h2>
+                <h2 class="font-display-2xl text-white italic">The Publications</h2>
                 <div class="flex items-center gap-8">
-                    <button class="ghost-button px-6 py-2 font-label-caps text-[10px]">Read All</button>
+                    <!-- <button class="ghost-button px-6 py-2 font-label-caps text-[10px]">Read All</button> -->
                     <span class="magazine-number text-soft-orange">05</span>
                 </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                 <article
                     class="p-12 border border-white/10 flex flex-col gap-8 group hover:border-soft-orange/30 transition-all duration-500 relative">
                     <div
                         class="absolute inset-0 bg-gradient-to-tr from-soft-orange/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                     </div>
-                    <span class="font-label-caps text-zinc-600 relative z-10">SEPTEMBER 12, 2024</span>
+                    <span class="font-label-caps text-zinc-600 relative z-10">DECEMBER 2025</span>
                     <h3
                         class="font-headline-h2 text-white leading-tight group-hover:text-soft-orange transition-colors relative z-10">
-                        The Intersection of Modern Typography and Front-end Architecture.</h3>
-                    <p class="font-body-md text-primary relative z-10">Exploring how variable fonts are revolutionizing
-                        the way we think about responsive text in high-end web experiences.</p>
+                        An Artificial Intelligence and Thermal Imaging Approach for Real-Time Rat Pest Detection in
+                        Farming Areas</h3>
+                    <p class="font-body-md text-primary relative z-10">Built a rat detection system using AI and thermal
+                        imaging (YOLOv11) with high accuracy, integrated with an automated ultrasonic response for
+                        effective pest control in agriculture.</p>
                     <a class="font-label-caps text-white inline-flex items-center gap-2 border-b border-white w-fit pb-1 group-hover:border-soft-orange group-hover:text-soft-orange transition-all duration-300 relative z-10"
-                        href="#">CONTINUE READING</a>
+                        href="https://e-journal.upm.ac.id/index.php/intro/article/view/intro.v4i2.424">CONTINUE
+                        READING</a>
                 </article>
                 <article
                     class="p-12 border border-white/10 flex flex-col gap-8 group hover:border-soft-orange/30 transition-all duration-500 relative">
                     <div
                         class="absolute inset-0 bg-gradient-to-tr from-soft-orange/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                     </div>
-                    <span class="font-label-caps text-zinc-600 relative z-10">AUGUST 24, 2024</span>
+                    <span class="font-label-caps text-zinc-600 relative z-10">DECEMBER 2025</span>
                     <h3
                         class="font-headline-h2 text-white leading-tight group-hover:text-soft-orange transition-colors relative z-10">
-                        Building Scalable Design Systems in Rapid Student Cycles.</h3>
-                    <p class="font-body-md text-primary relative z-10">A deep dive into maintaining code quality and
-                        aesthetic consistency when shipping fast-paced academic projects.</p>
+                        ReplikaGO: Digitizing the Artifacts of the Balla Lompoa Museum through Augmented Reality and
+                        Gamification</h3>
+                    <p class="font-body-md text-primary relative z-10">Developed an Augmented Reality application with
+                        gamification features to enhance cultural learning and engagement with museum artifacts through
+                        an interactive and user-centered experience.</p>
                     <a class="font-label-caps text-white inline-flex items-center gap-2 border-b border-white w-fit pb-1 group-hover:border-soft-orange group-hover:text-soft-orange transition-all duration-300 relative z-10"
-                        href="#">CONTINUE READING</a>
+                        href="https://e-journal.upm.ac.id/index.php/intro/article/view/intro.v4i2.427">CONTINUE
+                        READING</a>
+                </article>
+                <article
+                    class="p-12 border border-white/10 flex flex-col gap-8 group hover:border-soft-orange/30 transition-all duration-500 relative">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-tr from-soft-orange/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <span class="font-label-caps text-zinc-600 relative z-10">DECEMBER 2024</span>
+                    <h3
+                        class="font-headline-h2 text-white leading-tight group-hover:text-soft-orange transition-colors relative z-10">
+                        Studi Penggunaan Generative AI pada Mahasiswa Baru dengan Metode UTAUT : Studi Kasus di
+                        Perguruan Tinggi</h3>
+                    <p class="font-body-md text-primary relative z-10">Analyzed first-year students adoption of
+                        generative AI using the UTAUT model, revealing increased learning productivity alongside risks
+                        of dependency and misinformation.</p>
+                    <a class="font-label-caps text-white inline-flex items-center gap-2 border-b border-white w-fit pb-1 group-hover:border-soft-orange group-hover:text-soft-orange transition-all duration-300 relative z-10"
+                        href="https://ojs.amikomsolo.ac.id/index.php/semnasa/article/view/657">CONTINUE READING</a>
                 </article>
             </div>
         </section>
@@ -554,7 +588,7 @@
             <span class="magazine-number text-soft-orange block mb-8">06</span>
             <span class="font-label-caps text-electric-coral mb-stack-md block tracking-[0.3em]">OPEN FOR
                 COLLABORATION</span>
-            <h2 class="font-display-xl text-white mb-stack-lg max-w-4xl mx-auto italic">Let's create something
+            <h2 class="font-display-2xl text-white mb-stack-lg max-w-4xl mx-auto italic">Let's create something
                 remarkable together.</h2>
             <div class="flex justify-center mt-12">
                 <a class="text-[8vw] font-['Space_Grotesk'] font-black uppercase text-white hover:text-soft-orange transition-all duration-500 leading-none group relative inline-block"
