@@ -18,5 +18,5 @@ This is a comprehensive design language for a mindfulness and wellness applicati
 - **Cards**: Minimal border (1px, #e2e8f0), soft shadow (8px elevation).
 - **Navigation**: Clean, top-aligned, centered menu items.
 
----
 💡 **Tip**: When calling `generate_screen_from_text`, include the tokens above to ensure the new screen matches this design system.
+---
