@@ -224,7 +224,7 @@
                 <a class="nav-link text-zinc-500 uppercase text-[10px] tracking-[0.2em] font-medium font-label-caps hover:text-soft-orange transition-colors duration-300 transform hover:translate-y-[-1px]"
                     href="#work">Work</a>
                 <a class="nav-link text-zinc-500 uppercase text-[10px] tracking-[0.2em] font-medium font-label-caps hover:text-soft-orange transition-colors duration-300 transform hover:translate-y-[-1px]"
-                    href="#publication">Publications</a>
+                    href="#publication">Research</a>
                 <a class="nav-link text-zinc-500 uppercase text-[10px] tracking-[0.2em] font-medium font-label-caps hover:text-soft-orange transition-colors duration-300 transform hover:translate-y-[-1px]"
                     href="#contact">Contact</a>
             </div>
@@ -243,12 +243,12 @@
                     <span class="font-label-caps text-electric-coral mb-stack-md block tracking-[0.3em]">ALICIA JUANITA
                         LISAL</span>
                     <h1 class="font-display-xl text-white mb-stack-lg leading-none">
-                        Engineering the Future through <span class="italic font-headline-h1 text-soft-orange">Code &amp;
-                            Creativity</span>
+                        Full-Stack & AI Engineer <span class="italic font-headline-h1 text-soft-orange">building mobile
+                            apps, AR experiences, and data-driven systems</span>
                     </h1>
                     <p class="font-body-lg text-primary max-w-2xl mb-stack-lg">
-                        A software engineering student bridging the gap between technical precision and human-centric
-                        design. Crafting digital experiences that are as performant as they are poetic.
+                        I develop scalable applications using Flutter, Laravel, and Unity, with a focus on real-world
+                        problem solving and user-centered design.
                     </p>
                     <div class="flex gap-stack-md">
                         <button class="coral-button px-8 py-4 font-label-caps text-[14px]">View Work</button>
@@ -281,11 +281,13 @@
                 <div class="col-span-12 md:col-span-5">
                     <h2 class="font-display-2xl text-white mb-stack-lg">The Narrative</h2>
                     <div class="space-y-stack-md font-body-lg text-primary">
-                        <p>My journey as a software engineering student isn't just about syntax and algorithms; it's
-                            about the architecture of possibility. I approach every codebase as a blank canvas where
-                            logic meets aesthetic intent.</p>
-                        <p>Currently pursuing my degree, I've dedicated myself to mastering the intricacies of
-                            full-stack development while maintaining a rigorous focus on design systems and user
+                        <p>I am an Informatics student specializing in
+                            Artificial Intelligence with hands-on experience in building mobile and web applications. My
+                            work includes developing REST APIs, designing relational databases, and creating AR-based
+                            applications using Unity.</p>
+                        <p>I combine technical expertise with creative problem-solving to deliver high-quality software
+                            solutions. My goal is to leverage technology to create meaningful impact and seamless user
+                            experiences.
                             empathy.</p>
                     </div>
                 </div>
@@ -316,31 +318,31 @@
                     <div class="group">
                         <h3
                             class="font-label-caps text-electric-coral mb-stack-lg text-sm group-hover:text-soft-orange transition-colors">
-                            LANGUAGES</h3>
+                            SKILLS</h3>
                         <ul class="space-y-4 font-headline-h2 text-primary-fixed-dim text-3xl">
                             <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
-                                JavaScript (ES6+)</li>
+                                REST API</li>
                             <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
-                                TypeScript</li>
+                                Front-End Development</li>
                             <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
-                                Python</li>
+                                Back-End Development</li>
                             <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
-                                SQL / NoSQL</li>
+                                Database Design</li>
                         </ul>
                     </div>
                     <div class="group">
                         <h3
                             class="font-label-caps text-electric-coral mb-stack-lg text-sm group-hover:text-soft-orange transition-colors">
-                            FRAMEWORKS</h3>
+                            TECHNOLOGIES</h3>
                         <ul class="space-y-4 font-headline-h2 text-primary-fixed-dim text-3xl">
                             <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
-                                React / Next.js</li>
+                                Flutter</li>
                             <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
-                                Node.js</li>
+                                Laravel</li>
                             <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
                                 Tailwind CSS</li>
                             <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
-                                Django</li>
+                                Unity / Vuforia</li>
                         </ul>
                     </div>
                     <div class="group">
@@ -355,7 +357,7 @@
                             <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
                                 Docker</li>
                             <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
-                                Vercel / AWS</li>
+                                Vercel</li>
                         </ul>
                     </div>
                 </div>
@@ -377,7 +379,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-32">
                 <!-- Project 1 -->
                 <a href="https://github.com/alicialisal/ReplikaGo-ARGame.git"
-                    class="group cursor-pointer project-card block">
+                    onclick="openModal('replikago'); return false;" class="group cursor-pointer project-card block">
                     <div
                         class="aspect-video bg-surface overflow-hidden border border-white/5 mb-stack-lg project-image-container transition-all duration-500">
                         <img alt="ReplikaGO"
@@ -398,7 +400,7 @@
                     </div>
                 </a>
                 <!-- Project 2 -->
-                <a href="https://github.com/KingPublic/LokaIlmu_FE_Guru"
+                <a href="https://github.com/KingPublic/LokaIlmu_FE_Guru" onclick="openModal('lokailmu'); return false;"
                     class="group cursor-pointer mt-0 md:mt-24 project-card block">
                     <div
                         class="aspect-video bg-surface overflow-hidden border border-white/5 mb-stack-lg project-image-container transition-all duration-500">
@@ -412,8 +414,8 @@
                             <h3
                                 class="font-headline-h2 text-white text-2xl mb-2 group-hover:text-soft-orange transition-colors">
                                 Lokailmu: Empowering Teachers Through Digital Learning & Mentorship</h3>
-                            <p class="font-label-caps text-zinc-500 text-[10px]">Database Design • Flutter • Solution
-                                Making</p>
+                            <p class="font-label-caps text-zinc-500 text-[10px]">Database Design • Flutter • Mobile
+                                Application Development</p>
                         </div>
                         <span
                             class="material-symbols-outlined text-electric-coral transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">arrow_outward</span>
@@ -421,7 +423,7 @@
                 </a>
                 <!-- Project 3 -->
                 <a href="https://github.com/alicialisal/ALP-Group1-MomEase.git"
-                    class="group cursor-pointer project-card block">
+                    onclick="openModal('momease'); return false;" class="group cursor-pointer project-card block">
                     <div
                         class="aspect-video bg-surface overflow-hidden border border-white/5 mb-stack-lg project-image-container transition-all duration-500">
                         <img alt="MomEase"
@@ -435,6 +437,11 @@
                                 class="font-headline-h2 text-white text-2xl mb-2 group-hover:text-soft-orange transition-colors">
                                 MomEase: AI Companion for Maternal Mental Wellness</h3>
                             <p class="font-label-caps text-zinc-500 text-[10px]">Laravel • PHP • MySQL • UI/UX Design
+                            </p>
+                            <p class="text-sm text-zinc-400 mt-2">
+                                Developed a mobile app with <b>REST API backend</b> to support mood tracking,
+                                journaling,
+                                and mental health insights.
                             </p>
                         </div>
                         <span
@@ -482,12 +489,12 @@
                                 <div class="flex-grow">
                                     <h3
                                         class="font-headline-h2 text-white text-3xl group-hover:italic group-hover:text-soft-orange transition-all duration-500">
-                                        Senior Coding Mentor</h3>
-                                    <p class="font-label-caps text-zinc-500">University Tech Hub</p>
+                                        Coordinator – Publication & Documentation</h3>
+                                    <p class="font-label-caps text-zinc-500">Orientation Week UC Makassar 2025</p>
                                 </div>
                                 <span
-                                    class="font-label-caps text-electric-coral mt-4 md:mt-0 opacity-80 group-hover:opacity-100">2023
-                                    — PRESENT</span>
+                                    class="font-label-caps text-electric-coral mt-4 md:mt-0 opacity-80 group-hover:opacity-100">August
+                                    2025</span>
                             </div>
                             <div
                                 class="flex flex-col md:flex-row justify-between border-b border-white/10 pb-8 hover:bg-soft-orange/[0.03] transition-colors p-4 -mx-4 group cursor-default">
@@ -520,7 +527,7 @@
         <!-- Thoughts Section -->
         <section class="py-section-gap px-8 md:px-16 max-w-[1440px] mx-auto reveal-section" id="publication">
             <div class="flex justify-between items-center mb-16 gap-8">
-                <h2 class="font-display-2xl text-white italic">The Publications</h2>
+                <h2 class="font-display-2xl text-white italic">The Research</h2>
                 <div class="flex items-center gap-8">
                     <!-- <button class="ghost-button px-6 py-2 font-label-caps text-[10px]">Read All</button> -->
                     <span class="magazine-number text-soft-orange">05</span>
@@ -592,13 +599,353 @@
                 remarkable together.</h2>
             <div class="flex justify-center mt-12">
                 <a class="text-[8vw] font-['Space_Grotesk'] font-black uppercase text-white hover:text-soft-orange transition-all duration-500 leading-none group relative inline-block"
-                    href="mailto:hello@aliciajuanita.com">
+                    href="mailto:alicia.lisal94@gmail.com">
                     SAY_HELLO_
                     <span
                         class="absolute bottom-0 left-0 w-0 h-2 bg-soft-orange group-hover:w-full transition-all duration-500 ease-out"></span>
                 </a>
             </div>
         </section>
+        <!-- Project Modal Overlay -->
+        <div id="project-modal"
+            class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6 opacity-0 transition-opacity duration-500">
+            <!-- Backdrop -->
+            <div class="absolute inset-0 bg-[#050505]/90 backdrop-blur-sm cursor-pointer" onclick="closeModal()"></div>
+
+            <!-- Modal Content Box -->
+            <div class="relative bg-surface border border-white/10 w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-none shadow-2xl z-10 transform scale-95 transition-transform duration-500"
+                id="modal-content-box">
+
+                <!-- Close Button -->
+                <button onclick="closeModal()"
+                    class="absolute top-6 right-6 text-zinc-500 hover:text-soft-orange transition-colors z-20 bg-surface/80 backdrop-blur-sm p-2 rounded-full">
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+
+                <!-- Modal Body (MomEase) -->
+                <div id="momease-modal-content" class="p-8 md:p-16 relative hidden modal-body-content">
+                    <span class="font-label-caps text-electric-coral mb-stack-md block tracking-[0.3em]">MOMEASE</span>
+                    <h2 class="font-display-2xl text-white mb-stack-lg leading-none italic">
+                        MomEase – Mobile Health Application
+                    </h2>
+
+                    <div class="space-y-stack-lg font-body-lg text-primary">
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Overview</h3>
+                            <p>MomEase is a mobile application designed to support maternal mental health through
+                                journaling, self-assessment, and educational content. The system focuses on helping
+                                users track emotional states and access relevant resources in a structured and
+                                accessible way.</p>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Problem</h3>
+                            <p class="mb-4">Many mothers experiencing early symptoms of Baby Blues lack accessible tools
+                                to:</p>
+                            <ul class="list-disc pl-6 space-y-2 mb-4">
+                                <li>track their emotional condition consistently</li>
+                                <li>understand their mental state</li>
+                                <li>access reliable and structured support</li>
+                            </ul>
+                            <p>Most available solutions are either too complex or not personalized enough.</p>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Solution</h3>
+                            <p class="mb-4">I contributed to building a mobile-based solution that enables users to:</p>
+                            <ul class="list-disc pl-6 space-y-2 mb-4">
+                                <li>record daily moods through journaling</li>
+                                <li>perform self-assessment for mental health monitoring</li>
+                                <li>access curated educational content</li>
+                            </ul>
+                            <p>The system is designed to be simple, intuitive, and accessible for non-technical users.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">My Role</h3>
+                            <p class="font-label-caps text-soft-orange mb-4 text-sm tracking-widest">Back-End Mobile
+                                Developer & Database Designer</p>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li>Developed RESTful APIs using Laravel for CRUD operations (journaling, assessment,
+                                    content)</li>
+                                <li>Designed relational database schema (MySQL) to ensure structured and scalable data
+                                    storage</li>
+                                <li>Integrated backend services with Flutter frontend for seamless data flow</li>
+                                <li>Handled data processing for user inputs and feature interactions</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Tech Stack</h3>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+                                <div
+                                    class="border border-white/10 p-4 text-center group hover:border-soft-orange/30 transition-colors">
+                                    <span class="block font-label-caps text-zinc-500 mb-1">Frontend</span>
+                                    <span class="text-white font-medium">Flutter (Dart)</span>
+                                </div>
+                                <div
+                                    class="border border-white/10 p-4 text-center group hover:border-soft-orange/30 transition-colors">
+                                    <span class="block font-label-caps text-zinc-500 mb-1">Backend</span>
+                                    <span class="text-white font-medium">Laravel (PHP)</span>
+                                </div>
+                                <div
+                                    class="border border-white/10 p-4 text-center group hover:border-soft-orange/30 transition-colors">
+                                    <span class="block font-label-caps text-zinc-500 mb-1">Database</span>
+                                    <span class="text-white font-medium">MySQL</span>
+                                </div>
+                                <div
+                                    class="border border-white/10 p-4 text-center group hover:border-soft-orange/30 transition-colors">
+                                    <span class="block font-label-caps text-zinc-500 mb-1">Architecture</span>
+                                    <span class="text-white font-medium">REST API</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Challenges</h3>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li>Integrating backend (Laravel) with mobile frontend (Flutter) efficiently</li>
+                                <li>Designing a database that supports multiple features (journaling, assessment,
+                                    content)</li>
+                                <li>Handling data flow between different modules while maintaining performance</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Impact</h3>
+                            <ul class="list-disc pl-6 space-y-2 mb-8">
+                                <li>Delivered a functional end-to-end mobile application with backend integration</li>
+                                <li>Enabled structured tracking of user mood and self-assessment data</li>
+                                <li>Improved understanding of full-stack development workflow (API ↔ mobile ↔ database)
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="pt-8 border-t border-white/10 text-center md:text-left">
+                            <a href="https://github.com/alicialisal/ALP-Group1-MomEase.git" target="_blank"
+                                class="coral-button px-8 py-4 font-label-caps text-[14px] inline-flex items-center justify-center gap-2">
+                                VIEW REPOSITORY <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal Body (ReplikaGO) -->
+                <div id="replikago-modal-content" class="p-8 md:p-16 relative hidden modal-body-content">
+                    <span
+                        class="font-label-caps text-electric-coral mb-stack-md block tracking-[0.3em]">REPLIKAGO</span>
+                    <h2 class="font-display-2xl text-white mb-stack-lg leading-none italic">
+                        ReplikaGO – AR Tourism Game
+                    </h2>
+
+                    <div class="space-y-stack-lg font-body-lg text-primary">
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Overview</h3>
+                            <p>ReplikaGO is an Augmented Reality (AR) application designed to enhance visitor engagement
+                                at Balla Lompoa Museum through interactive and gamified experiences.</p>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Problem</h3>
+                            <p class="mb-4">Tourism destinations, especially cultural sites, often struggle to:</p>
+                            <ul class="list-disc pl-6 space-y-2 mb-4">
+                                <li>engage younger audiences</li>
+                                <li>present information interactively</li>
+                                <li>maintain visitor interest throughout the experience</li>
+                            </ul>
+                            <p>Traditional museum formats are mostly passive and less immersive.</p>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Solution</h3>
+                            <p class="mb-4">We developed an AR-based game that allows users to:</p>
+                            <ul class="list-disc pl-6 space-y-2 mb-4">
+                                <li>explore museum artifacts interactively</li>
+                                <li>receive contextual information through AR overlays</li>
+                                <li>engage with gamified elements to enhance learning experience</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">My Role</h3>
+                            <p class="font-label-caps text-soft-orange mb-4 text-sm tracking-widest">AR Developer</p>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li>Built AR interaction features using Unity and Vuforia</li>
+                                <li>Implemented object tracking and interactive content display</li>
+                                <li>Designed user interaction flow for immersive experience</li>
+                                <li>Integrated gamification elements into the AR environment</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Tech Stack</h3>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+                                <div
+                                    class="border border-white/10 p-4 text-center group hover:border-soft-orange/30 transition-colors">
+                                    <span class="block font-label-caps text-zinc-500 mb-1">Engine</span>
+                                    <span class="text-white font-medium">Unity (C#)</span>
+                                </div>
+                                <div
+                                    class="border border-white/10 p-4 text-center group hover:border-soft-orange/30 transition-colors">
+                                    <span class="block font-label-caps text-zinc-500 mb-1">AR SDK</span>
+                                    <span class="text-white font-medium">Vuforia</span>
+                                </div>
+                                <div
+                                    class="border border-white/10 p-4 text-center group hover:border-soft-orange/30 transition-colors">
+                                    <span class="block font-label-caps text-zinc-500 mb-1">Platform</span>
+                                    <span class="text-white font-medium">Mobile (Android)</span>
+                                </div>
+                                <div
+                                    class="border border-white/10 p-4 text-center group hover:border-soft-orange/30 transition-colors">
+                                    <span class="block font-label-caps text-zinc-500 mb-1">3D Assets</span>
+                                    <span class="text-white font-medium">Blender</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Challenges</h3>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li>Ensuring stable AR object detection in varying lighting conditions</li>
+                                <li>Designing intuitive interaction for first-time users</li>
+                                <li>Balancing performance with real-time rendering</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Impact</h3>
+                            <ul class="list-disc pl-6 space-y-2 mb-8">
+                                <li>Delivered an interactive AR application for cultural tourism</li>
+                                <li>Improved user engagement through gamification and immersion</li>
+                                <li>Gained hands-on experience in AR development and real-time systems</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">What I'd Improve Next</h3>
+                            <ul class="list-disc pl-6 space-y-2 mb-8">
+                                <li>Add location-based AR features (GPS integration)</li>
+                                <li>Enhance UI/UX for smoother onboarding</li>
+                                <li>Optimize performance for lower-end devices</li>
+                            </ul>
+                        </div>
+
+                        <div class="pt-8 border-t border-white/10 text-center md:text-left">
+                            <a href="https://github.com/alicialisal/ReplikaGo-ARGame.git" target="_blank"
+                                class="coral-button px-8 py-4 font-label-caps text-[14px] inline-flex items-center justify-center gap-2">
+                                VIEW REPOSITORY <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal Body (LokaIlmu) -->
+                <div id="lokailmu-modal-content" class="p-8 md:p-16 relative hidden modal-body-content">
+                    <span class="font-label-caps text-electric-coral mb-stack-md block tracking-[0.3em]">LOKAILMU</span>
+                    <h2 class="font-display-2xl text-white mb-stack-lg leading-none italic">
+                        LokaIlmu – Digital Learning Platform
+                    </h2>
+
+                    <div class="space-y-stack-lg font-body-lg text-primary">
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Overview</h3>
+                            <p>LokaIlmu is a mobile-based platform designed to support teachers through digital learning
+                                resources and mentorship programs.</p>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Problem</h3>
+                            <p class="mb-4">Teachers often face:</p>
+                            <ul class="list-disc pl-6 space-y-2 mb-4">
+                                <li>limited access to structured professional development</li>
+                                <li>lack of mentorship support</li>
+                                <li>fragmented learning resources</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Solution</h3>
+                            <p class="mb-4">We developed a mobile application that allows users to:</p>
+                            <ul class="list-disc pl-6 space-y-2 mb-4">
+                                <li>access curated learning materials</li>
+                                <li>connect with mentors</li>
+                                <li>track their development progress</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">My Role</h3>
+                            <p class="font-label-caps text-soft-orange mb-4 text-sm tracking-widest">Frontend Developer
+                                (Flutter) & Database Designer</p>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li>Built responsive and user-friendly mobile interfaces using Flutter</li>
+                                <li>Designed relational database schema (MySQL) to support user data and learning
+                                    content</li>
+                                <li>Structured data models to ensure efficient data handling and scalability</li>
+                                <li>Collaborated with backend integration to ensure smooth data flow between system
+                                    components</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Tech Stack</h3>
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+                                <div
+                                    class="border border-white/10 p-4 text-center group hover:border-soft-orange/30 transition-colors">
+                                    <span class="block font-label-caps text-zinc-500 mb-1">Frontend</span>
+                                    <span class="text-white font-medium">Flutter (Dart)</span>
+                                </div>
+                                <div
+                                    class="border border-white/10 p-4 text-center group hover:border-soft-orange/30 transition-colors">
+                                    <span class="block font-label-caps text-zinc-500 mb-1">Database</span>
+                                    <span class="text-white font-medium">MySQL</span>
+                                </div>
+                                <div
+                                    class="border border-white/10 p-4 text-center group hover:border-soft-orange/30 transition-colors">
+                                    <span class="block font-label-caps text-zinc-500 mb-1">Architecture</span>
+                                    <span class="text-white font-medium">Client-server</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Challenges</h3>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li>Designing scalable database structure for multiple user roles</li>
+                                <li>Ensuring smooth UI performance in a data-driven mobile application</li>
+                                <li>Aligning frontend structure with backend data requirements</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Impact</h3>
+                            <ul class="list-disc pl-6 space-y-2 mb-8">
+                                <li>Delivered a functional mobile learning platform prototype</li>
+                                <li>Improved data organization and system structure through database design</li>
+                                <li>Strengthened skills in Flutter development and data modeling</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">What I'd Improve Next</h3>
+                            <ul class="list-disc pl-6 space-y-2 mb-8">
+                                <li>Implement role-based authentication system</li>
+                                <li>Add real-time features (chat between mentors & teachers)</li>
+                                <li>Optimize data loading and state management</li>
+                            </ul>
+                        </div>
+
+                        <div class="pt-8 border-t border-white/10 text-center md:text-left">
+                            <a href="https://github.com/KingPublic/LokaIlmu_FE_Guru" target="_blank"
+                                class="coral-button px-8 py-4 font-label-caps text-[14px] inline-flex items-center justify-center gap-2">
+                                VIEW REPOSITORY <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <!-- Footer -->
     <footer class="w-full mt-24 border-t border-white/10 bg-[#050505]">
@@ -609,13 +956,11 @@
             </div>
             <div class="flex gap-12">
                 <a class="text-zinc-600 font-['Space_Grotesk'] text-[10px] tracking-widest uppercase hover:text-soft-orange transition-all hover:translate-y-[-2px] hover:underline decoration-soft-orange underline-offset-8"
-                    href="#">GITHUB</a>
+                    href="https://github.com/alicialisal">GITHUB</a>
                 <a class="text-zinc-600 font-['Space_Grotesk'] text-[10px] tracking-widest uppercase hover:text-soft-orange transition-all hover:translate-y-[-2px] hover:underline decoration-soft-orange underline-offset-8"
-                    href="#">LINKEDIN</a>
+                    href="https://www.linkedin.com/in/alicialisal/">LINKEDIN</a>
                 <a class="text-zinc-600 font-['Space_Grotesk'] text-[10px] tracking-widest uppercase hover:text-soft-orange transition-all hover:translate-y-[-2px] hover:underline decoration-soft-orange underline-offset-8"
-                    href="#">TWITTER</a>
-                <a class="text-zinc-600 font-['Space_Grotesk'] text-[10px] tracking-widest uppercase hover:text-soft-orange transition-all hover:translate-y-[-2px] hover:underline decoration-soft-orange underline-offset-8"
-                    href="#">EMAIL</a>
+                    href="mailto:alicia.lisal94@gmail.com">EMAIL</a>
             </div>
             <div class="font-['Space_Grotesk'] text-[10px] tracking-widest uppercase text-zinc-500">
                 © 2026 ALICIA LISAL. CRAFTED WITH PRECISION.
@@ -683,6 +1028,44 @@
         sections.forEach(section => {
             scrollSpyObserver.observe(section);
         });
+
+        // Modal Logic
+        const projectModal = document.getElementById('project-modal');
+        const modalContentBox = document.getElementById('modal-content-box');
+
+        function openModal(modalId) {
+            // Hide all modal bodies
+            const bodies = document.querySelectorAll('.modal-body-content');
+            bodies.forEach(body => body.classList.add('hidden'));
+
+            // Show requested modal body
+            const targetBody = document.getElementById(modalId + '-modal-content');
+            if (targetBody) targetBody.classList.remove('hidden');
+
+            projectModal.classList.remove('hidden');
+            projectModal.classList.add('flex');
+
+            // Allow display:flex to apply before transitioning opacity
+            setTimeout(() => {
+                projectModal.classList.remove('opacity-0');
+                modalContentBox.classList.remove('scale-95');
+                modalContentBox.classList.add('scale-100');
+            }, 10);
+
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            projectModal.classList.add('opacity-0');
+            modalContentBox.classList.remove('scale-100');
+            modalContentBox.classList.add('scale-95');
+
+            setTimeout(() => {
+                projectModal.classList.add('hidden');
+                projectModal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }, 500);
+        }
     </script>
 </body>
 
