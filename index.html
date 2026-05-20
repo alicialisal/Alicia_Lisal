@@ -450,7 +450,7 @@
                 </a>
                 <!-- Project 4 -->
                 <a href="https://github.com/chaidenfoanto/Group-3---Project-NPLC"
-                    class="group cursor-pointer mt-0 md:mt-24 project-card block">
+                    onclick="openModal('nplc'); return false;" class="group cursor-pointer project-card block">
                     <div
                         class="aspect-video bg-surface overflow-hidden border border-white/5 mb-stack-lg project-image-container transition-all duration-500">
                         <img alt="NPLC Website"
@@ -501,23 +501,24 @@
                                 <div class="flex-grow">
                                     <h3
                                         class="font-headline-h2 text-white text-3xl group-hover:italic group-hover:text-soft-orange transition-all duration-500">
-                                        Frontend Intern</h3>
-                                    <p class="font-label-caps text-zinc-500">Editorial Design Collective</p>
+                                        Secretary - Executive Board</h3>
+                                    <p class="font-label-caps text-zinc-500">Informatics Student Union 24/25</p>
                                 </div>
                                 <span
-                                    class="font-label-caps text-electric-coral mt-4 md:mt-0 opacity-80 group-hover:opacity-100">SUMMER
-                                    2023</span>
+                                    class="font-label-caps text-electric-coral mt-4 md:mt-0 opacity-80 group-hover:opacity-100">October
+                                    2024 - July 2025</span>
                             </div>
                             <div
                                 class="flex flex-col md:flex-row justify-between border-b border-white/10 pb-8 hover:bg-soft-orange/[0.03] transition-colors p-4 -mx-4 group cursor-default">
                                 <div class="flex-grow">
                                     <h3
                                         class="font-headline-h2 text-white text-3xl group-hover:italic group-hover:text-soft-orange transition-all duration-500">
-                                        Hackathon Lead</h3>
-                                    <p class="font-label-caps text-zinc-500">Regional Innovation Summit</p>
+                                        Hackathon Team Lead</h3>
+                                    <p class="font-label-caps text-zinc-500">BINAR x Dispora Competition</p>
                                 </div>
                                 <span
-                                    class="font-label-caps text-electric-coral mt-4 md:mt-0 opacity-80 group-hover:opacity-100">2022</span>
+                                    class="font-label-caps text-electric-coral mt-4 md:mt-0 opacity-80 group-hover:opacity-100">November
+                                    2023</span>
                             </div>
                         </div>
                     </div>
@@ -938,6 +939,109 @@
 
                         <div class="pt-8 border-t border-white/10 text-center md:text-left">
                             <a href="https://github.com/KingPublic/LokaIlmu_FE_Guru" target="_blank"
+                                class="coral-button px-8 py-4 font-label-caps text-[14px] inline-flex items-center justify-center gap-2">
+                                VIEW REPOSITORY <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal Body (NPLC) -->
+                <div id="nplc-modal-content" class="p-8 md:p-16 relative hidden modal-body-content">
+                    <span class="font-label-caps text-electric-coral mb-stack-md block tracking-[0.3em]">NPLC</span>
+                    <h2 class="font-display-2xl text-white mb-stack-lg leading-none italic">
+                        NPLC – Digital Rally Game Platform
+                    </h2>
+
+                    <div class="space-y-stack-lg font-body-lg text-primary">
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Overview</h3>
+                            <p>NPLC (National Professional Learning Community) is a digital rally game platform
+                                designed to enhance event management and
+                                participant engagement through real-time information display and game tracking.</p>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Problem</h3>
+                            <p class="mb-4">Traditional rally events often struggle with:</p>
+                            <ul class="list-disc pl-6 space-y-2 mb-4">
+                                <li>outdated information dissemination methods</li>
+                                <li>difficulty in tracking participant progress</li>
+                                <li>inefficient event management processes</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Solution</h3>
+                            <p class="mb-4">We developed a responsive website that provides:</p>
+                            <ul class="list-disc pl-6 space-y-2 mb-4">
+                                <li>real-time display of rally event information</li>
+                                <li>game status updates and tracking</li>
+                                <li>improved participant engagement through digital interaction</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">My Role</h3>
+                            <p class="font-label-caps text-soft-orange mb-4 text-sm tracking-widest">Frontend Developer
+                                (HTML CSS JS) & Database Designer</p>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li>Built responsive and user-friendly website using HTML, CSS, and JavaScript</li>
+                                <li>Designed database schema (MySQL) to support user data and rally event information
+                                </li>
+                                <li>Create interactive animations using Javascript to enhance user experience</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Tech Stack</h3>
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+                                <div
+                                    class="border border-white/10 p-4 text-center group hover:border-soft-orange/30 transition-colors">
+                                    <span class="block font-label-caps text-zinc-500 mb-1">Frontend</span>
+                                    <span class="text-white font-medium">HTML CSS JS</span>
+                                </div>
+                                <div
+                                    class="border border-white/10 p-4 text-center group hover:border-soft-orange/30 transition-colors">
+                                    <span class="block font-label-caps text-zinc-500 mb-1">Database</span>
+                                    <span class="text-white font-medium">MySQL</span>
+                                </div>
+                                <div
+                                    class="border border-white/10 p-4 text-center group hover:border-soft-orange/30 transition-colors">
+                                    <span class="block font-label-caps text-zinc-500 mb-1">Architecture</span>
+                                    <span class="text-white font-medium">Client-server</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Challenges</h3>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li>Designing scalable database structure for multiple user roles</li>
+                                <li>Ensuring smooth UI performance in a data-driven mobile application</li>
+                                <li>Aligning frontend structure with backend data requirements</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Impact</h3>
+                            <ul class="list-disc pl-6 space-y-2 mb-8">
+                                <li>Delivered a functional mobile learning platform prototype</li>
+                                <li>Improved data organization and system structure through database design</li>
+                                <li>Strengthened skills in Flutter development and data modeling</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">What I'd Improve Next</h3>
+                            <ul class="list-disc pl-6 space-y-2 mb-8">
+                                <li>Implement role-based authentication system</li>
+                                <li>Add real-time features (chat between mentors & teachers)</li>
+                                <li>Optimize data loading and state management</li>
+                            </ul>
+                        </div>
+
+                        <div class="pt-8 border-t border-white/10 text-center md:text-left">
+                            <a href="https://github.com/chaidenfoanto/Group-3---Project-NPLC" target="_blank"
                                 class="coral-button px-8 py-4 font-label-caps text-[14px] inline-flex items-center justify-center gap-2">
                                 VIEW REPOSITORY <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
                             </a>
