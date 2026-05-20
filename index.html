@@ -178,15 +178,77 @@
             text-orientation: mixed;
         }
 
-        .glow-bg {
+        .liquid-blob {
             position: fixed;
+            mix-blend-mode: screen;
+            filter: blur(80px);
+            opacity: 0.18;
+            pointer-events: none;
+            z-index: -1;
+            will-change: transform, border-radius;
+        }
+
+        .blob-orange {
+            background: radial-gradient(circle, rgba(255, 140, 66, 0.6) 0%, rgba(255, 111, 97, 0.2) 70%, transparent 100%);
             width: 60vw;
             height: 60vw;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(255, 111, 97, 0.15) 0%, rgba(255, 140, 66, 0.08) 50%, transparent 70%);
-            filter: blur(80px);
-            z-index: -1;
-            pointer-events: none;
+            top: -15%;
+            right: -15%;
+            animation: morph-liquid 18s infinite alternate ease-in-out, drift-1 35s infinite alternate ease-in-out;
+        }
+
+        .blob-coral {
+            background: radial-gradient(circle, rgba(255, 111, 97, 0.5) 0%, rgba(255, 140, 66, 0.15) 70%, transparent 100%);
+            width: 70vw;
+            height: 70vw;
+            bottom: -25%;
+            left: -15%;
+            animation: morph-liquid 22s infinite alternate-reverse ease-in-out, drift-2 40s infinite alternate ease-in-out;
+        }
+
+        .blob-center {
+            background: radial-gradient(circle, rgba(255, 140, 66, 0.35) 0%, rgba(255, 111, 97, 0.1) 75%, transparent 100%);
+            width: 55vw;
+            height: 55vw;
+            top: 25%;
+            left: -10%;
+            animation: morph-liquid 26s infinite alternate ease-in-out, drift-3 45s infinite alternate ease-in-out;
+        }
+
+        @keyframes morph-liquid {
+            0% {
+                border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+            }
+            33% {
+                border-radius: 70% 30% 52% 48% / 60% 40% 60% 40%;
+            }
+            55% {
+                border-radius: 30% 70% 70% 30% / 50% 30% 70% 50%;
+            }
+            77% {
+                border-radius: 50% 50% 35% 65% / 40% 50% 50% 60%;
+            }
+            100% {
+                border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+            }
+        }
+
+        @keyframes drift-1 {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-10%, 10%) rotate(180deg); }
+            100% { transform: translate(5%, -5%) rotate(360deg); }
+        }
+
+        @keyframes drift-2 {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(10%, -10%) rotate(-180deg); }
+            100% { transform: translate(-5%, 5%) rotate(-360deg); }
+        }
+
+        @keyframes drift-3 {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-5%, -10%) scale(1.1); }
+            100% { transform: translate(8%, 5%) scale(0.95); }
         }
 
         .reveal-section {
@@ -208,10 +270,10 @@
 </head>
 
 <body class="font-body-md text-on-surface selection:bg-electric-coral selection:text-black">
-    <!-- Atmospheric Globs -->
-    <div class="glow-bg top-[-10%] right-[-20%] animate-pulse-slow"></div>
-    <div class="glow-bg top-[40%] left-[-20%] animate-pulse-slow" style="animation-delay: -2s;"></div>
-    <div class="glow-bg bottom-[-10%] right-[-10%] animate-pulse-slow" style="animation-delay: -4s;"></div>
+    <!-- Atmospheric Liquid Blobs -->
+    <div class="liquid-blob blob-orange"></div>
+    <div class="liquid-blob blob-coral"></div>
+    <div class="liquid-blob blob-center"></div>
     <!-- TopNavBar -->
     <nav class="fixed top-0 w-full z-50 bg-[#050505]/90 backdrop-blur-sm border-b border-white/10 h-20">
         <div class="flex justify-between items-center w-full px-8 md:px-16 h-full max-w-[1440px] mx-auto">
@@ -243,8 +305,9 @@
             id="about">
             <div class="grid grid-cols-12 gap-grid-gutter items-center">
                 <div class="col-span-12 lg:col-span-8 z-10">
-                    <span class="font-label-caps text-electric-coral mb-stack-md block tracking-[0.3em]">ALICIA JUANITA
-                        LISAL</span>
+                    <span class="font-['Space_Grotesk'] font-black uppercase text-transparent bg-clip-text bg-gradient-to-r from-electric-coral via-soft-orange to-white text-3xl md:text-5xl mb-stack-md block tracking-[0.05em] leading-tight">
+                        ALICIA JUANITA LISAL
+                    </span>
                     <h1 class="font-display-xl text-white mb-stack-lg leading-none">
                         Full-Stack & AI Engineer <span class="italic font-headline-h1 text-soft-orange">building mobile
                             apps, AR experiences, and data-driven systems</span>
