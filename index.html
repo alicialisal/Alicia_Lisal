@@ -252,7 +252,7 @@
                 <a class="nav-link text-zinc-500 uppercase text-[10px] tracking-[0.2em] font-medium font-label-caps hover:text-soft-orange transition-colors duration-300 transform hover:translate-y-[-1px]"
                     href="#expertise">Expertise</a>
                 <a class="nav-link text-zinc-500 uppercase text-[10px] tracking-[0.2em] font-medium font-label-caps hover:text-soft-orange transition-colors duration-300 transform hover:translate-y-[-1px]"
-                    href="#work">Work</a>
+                    href="#Projects">Projects</a>
                 <a class="nav-link text-zinc-500 uppercase text-[10px] tracking-[0.2em] font-medium font-label-caps hover:text-soft-orange transition-colors duration-300 transform hover:translate-y-[-1px]"
                     href="#publication">Research</a>
                 <a class="nav-link text-zinc-500 uppercase text-[10px] tracking-[0.2em] font-medium font-label-caps hover:text-soft-orange transition-colors duration-300 transform hover:translate-y-[-1px]"
@@ -285,7 +285,7 @@
                     </p>
                     <div class="flex gap-stack-md">
                         <a class="coral-button px-8 py-4 font-label-caps text-[14px] inline-flex items-center justify-center"
-                            href="#work">
+                            href="#Projects">
                             View Work
                         </a>
                         <a class="ghost-button px-8 py-4 font-label-caps text-[14px] inline-flex items-center justify-center"
@@ -416,7 +416,7 @@
             </div>
         </section>
         <!-- Projects Section -->
-        <section class="py-section-gap px-8 md:px-16 max-w-[1440px] mx-auto reveal-section" id="work">
+        <section class="py-section-gap px-8 md:px-16 max-w-[1440px] mx-auto reveal-section" id="Projects">
             <div class="flex justify-between items-end mb-24 gap-8">
                 <div class="flex items-center gap-stack-lg flex-grow">
                     <h2 class="font-display-2xl text-white italic">Selected Projects</h2>
@@ -425,6 +425,50 @@
                 <span class="magazine-number text-soft-orange">02</span>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-32">
+                <!-- Project 1 -->
+                <a href="" onclick="openModal('thermal'); return false;"
+                    class="group cursor-pointer project-card block">
+                    <div
+                        class="aspect-video bg-surface overflow-hidden border border-white/5 mb-stack-lg project-image-container transition-all duration-500">
+                        <img alt="Thermal Rat Detection"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                            src="Portfolio Alicia Juanita Lisal.png" />
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3
+                                class="font-headline-h2 text-white text-2xl mb-2 group-hover:text-soft-orange transition-colors">
+                                Thermal Camera + YOLOv11 Rat Detection for Farmers</h3>
+                            <p class="font-label-caps text-zinc-500 text-[10px]">Computer Vision • Object Detection •
+                                OpenCV</p>
+                        </div>
+                        <span
+                            class="material-symbols-outlined text-electric-coral transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">arrow_outward</span>
+                    </div>
+                </a>
+                <!-- Project 2 -->
+                <a href="https://colab.research.google.com/drive/1qxmRlxbshKQTFA7ET_3IFrs-l0oJuUne?usp=sharing"
+                    onclick="openModal('vaccine'); return false;"
+                    class="group cursor-pointer mt-0 md:mt-24 project-card block">
+                    <div
+                        class="aspect-video bg-surface overflow-hidden border border-white/5 mb-stack-lg project-image-container transition-all duration-500">
+                        <img alt="Lokailmu"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                            data-alt="LokaIlmu is a mobile application that provides digital learning and mentorship services for teachers. The application allows teachers to access educational resources, connect with mentors, and track their professional development."
+                            src="result vaccine.png" />
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3
+                                class="font-headline-h2 text-white text-2xl mb-2 group-hover:text-soft-orange transition-colors">
+                                Vaccine Demand Prediction with Apache Spark & Random Forest</h3>
+                            <p class="font-label-caps text-zinc-500 text-[10px]">Big Data • Apache Spark • Random Forest
+                            </p>
+                        </div>
+                        <span
+                            class="material-symbols-outlined text-electric-coral transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">arrow_outward</span>
+                    </div>
+                </a>
                 <!-- Project 1 -->
                 <a href="https://github.com/alicialisal/ReplikaGo-ARGame.git"
                     onclick="openModal('replikago'); return false;" class="group cursor-pointer project-card block">
@@ -781,7 +825,238 @@
                         </div>
                     </div>
                 </div>
+                <!-- Modal Body (Vaccine) -->
+                <div id="vaccine-modal-content" class="p-8 md:p-16 relative hidden modal-body-content">
+                    <span class="font-label-caps text-electric-coral mb-stack-md block tracking-[0.3em]">BIG DATA</span>
+                    <h2 class="font-display-2xl text-white mb-stack-lg leading-none italic">
+                        COVID 19 Vaccine Demand Prediction
+                    </h2>
 
+                    <div class="space-y-stack-lg font-body-lg text-primary">
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Overview</h3>
+                            <p>A machine learning-based vaccine demand prediction system using Apache Spark and Random
+                                Forest to forecast weekly COVID-19 vaccine needs across EU/EEA countries using
+                                large-scale ECDC vaccination data. The project processed over 800,000 vaccination
+                                records from 30 EU/EEA countries to build a scalable prediction pipeline for short-term
+                                vaccine demand forecasting. The system used distributed big data processing and
+                                time-series feature engineering to support vaccine logistics planning.</p>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Problem</h3>
+                            <ul class="list-disc pl-6 space-y-2 mb-4">
+                                <li>Vaccine demand fluctuated significantly during the COVID-19 pandemic.</li>
+                                <li>Supply-demand imbalance caused delays and unequal vaccine distribution.</li>
+                                <li>Large-scale vaccination datasets were difficult to process efficiently using
+                                    traditional methods.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Solution</h3>
+                            <p class="mb-4">I contributed to build a vaccine demand prediction system, where i:</p>
+                            <ul class="list-disc pl-6 space-y-2 mb-4">
+                                <li>Built a distributed data processing pipeline using Apache Spark.</li>
+                                <li>Engineered lag-based and seasonal time-series features from vaccination history.
+                                </li>
+                                <li>Trained country-specific Random Forest models for weekly vaccine demand prediction.
+                                </li>
+                                <li>Evaluated model performance using R2, MAE, and RMSE metrics across different
+                                    countries.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">My Role</h3>
+                            <p class="font-label-caps text-soft-orange mb-4 text-sm tracking-widest">ML Developer</p>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li>Performed data preprocessing and feature engineering using PySpark.</li>
+                                <li>Developed lag and seasonal feature generation pipelines.</li>
+                                <li>Assisted in Random Forest model training and evaluation.</li>
+                                <li>Contributed to research writing, analysis, and result interpretation.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Tech Stack</h3>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
+                                <div
+                                    class="border border-white/10 p-4 text-center group hover:border-soft-orange/30 transition-colors">
+                                    <span class="block font-label-caps text-zinc-500 mb-1">Big Data</span>
+                                    <span class="text-white font-medium">Apache Spark</span>
+                                </div>
+                                <div
+                                    class="border border-white/10 p-4 text-center group hover:border-soft-orange/30 transition-colors">
+                                    <span class="block font-label-caps text-zinc-500 mb-1">Machine Learning</span>
+                                    <span class="text-white font-medium">Random Forest</span>
+                                </div>
+                                <div
+                                    class="border border-white/10 p-4 text-center group hover:border-soft-orange/30 transition-colors">
+                                    <span class="block font-label-caps text-zinc-500 mb-1">Framework</span>
+                                    <span class="text-white font-medium">PySpark</span>
+                                </div>
+                                <div
+                                    class="border border-white/10 p-4 text-center group hover:border-soft-orange/30 transition-colors">
+                                    <span class="block font-label-caps text-zinc-500 mb-1">Dataset</span>
+                                    <span class="text-white font-medium">ECDC Vaccination Data</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Challenges</h3>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li>Handling over 800,000 records with heterogeneous vaccination patterns across
+                                    countries</li>
+                                <li>Managing inconsistent and sparse vaccination data from several countries</li>
+                                <li>Capturing sudden policy-driven demand changes using historical data only</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Impact</h3>
+                            <ul class="list-disc pl-6 space-y-2 mb-8">
+                                <li>Achieved strong prediction performance in countries with stable vaccination trends,
+                                    such as Germany (R² ≈ 0.83)</li>
+                                <li>Demonstrated scalable machine learning workflows for healthcare big data analytics.
+                                </li>
+                                <li>Provided a decision-support tool for short-term vaccine logistics planning
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">What I'd improve next</h3>
+                            <ul class="list-disc pl-6 space-y-2 mb-8">
+                                <li>Integrate external factors such as government policies and COVID-19 case spikes
+                                </li>
+                                <li>Explore more adaptive forecasting models like XGBoost or LSTM
+                                </li>
+                                <li>Extend the system for real-time vaccine demand monitoring and forecasting
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="pt-8 border-t border-white/10 text-center md:text-left">
+                            <a href="https://colab.research.google.com/drive/1qxmRlxbshKQTFA7ET_3IFrs-l0oJuUne?usp=sharing"
+                                target="_blank"
+                                class="coral-button px-8 py-4 font-label-caps text-[14px] inline-flex items-center justify-center gap-2">
+                                VIEW NOTEBOOK <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal Body (Thermal) -->
+                <div id="thermal-modal-content" class="p-8 md:p-16 relative hidden modal-body-content">
+                    <span class="font-label-caps text-electric-coral mb-stack-md block tracking-[0.3em]">Thermal Rat
+                        Detection</span>
+                    <h2 class="font-display-2xl text-white mb-stack-lg leading-none italic">
+                        Thermal Rat Detection for Farmers
+                    </h2>
+
+                    <div class="space-y-stack-lg font-body-lg text-primary">
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Overview</h3>
+                            <p>A real-time nocturnal rat detection system combining thermal camera imagery and YOLOv11
+                                object detection, deployed to solve an actual pest problem identified during fieldwork
+                                in Desa Sengka. Detection triggers an automatic ultrasonic deterrent.</p>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Problem</h3>
+                            <p class="mb-4">Farmers often face:</p>
+                            <ul class="list-disc pl-6 space-y-2 mb-4">
+                                <li>Night-time rat attacks that are difficult to detect</li>
+                                <li>Ineffective traditional monitoring methods</li>
+                                <li>Limited access to affordable automated detection systems</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Solution</h3>
+                            <p class="mb-4">We collected thermal rat datasets from Roboflow and Kaggle and developed a
+                                computer vision project that:</p>
+                            <ul class="list-disc pl-6 space-y-2 mb-4">
+                                <li>Collected and unified thermal rat datasets into YOLO format.</li>
+                                <li>Applied thermal-specific data augmentation to improve detection robustness</li>
+                                <li>Integrated real-time rat detection with automatic ultrasonic activation.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">My Role</h3>
+                            <p class="font-label-caps text-soft-orange mb-4 text-sm tracking-widest"> ML Developer &
+                                Lead Author</p>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li>Collected thermal datasets and converted segmentation annotations into YOLO
+                                    bounding-box format</li>
+                                <li>Developed a thermal-image augmentation pipeline to improve model robustness and
+                                    detection accuracy</li>
+                                <li>Trained and evaluated the YOLOv11-based thermal rat detection system for real-time
+                                    inference</li>
+                                <li>Integrated automated ultrasonic activation triggered by detection events</li>
+                                <li>Contributed to academic research writing and project documentation</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Tech Stack</h3>
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+                                <div
+                                    class="border border-white/10 p-4 text-center group hover:border-soft-orange/30 transition-colors">
+                                    <span class="block font-label-caps text-zinc-500 mb-1">Training Environment</span>
+                                    <span class="text-white font-medium">Google Colab GPU</span>
+                                </div>
+                                <div
+                                    class="border border-white/10 p-4 text-center group hover:border-soft-orange/30 transition-colors">
+                                    <span class="block font-label-caps text-zinc-500 mb-1">Dataset Sources</span>
+                                    <span class="text-white font-medium">Kaggle & Roboflow</span>
+                                </div>
+                                <div
+                                    class="border border-white/10 p-4 text-center group hover:border-soft-orange/30 transition-colors">
+                                    <span class="block font-label-caps text-zinc-500 mb-1">Detection Model</span>
+                                    <span class="text-white font-medium">YOLOv11</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Challenges</h3>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li>Thermal images lacked RGB texture and color information, requiring specialized
+                                    augmentation techniques.</li>
+                                <li>The Kaggle dataset used segmentation masks, requiring custom conversion into YOLO
+                                    bounding-box annotations.</li>
+                                <li>No thermal camera hardware was available, so development relied entirely on
+                                    open-source datasets and YouTube thermal videos.</li>
+                                <li>Model evaluation used unseen real-world thermal videos to better test generalization
+                                    performance.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">Impact</h3>
+                            <p class="mb-4">The system achieved mAP@50 above 0.99, precision 0.989, and recall 0.981,
+                                performance
+                                strong enough to operate reliably as an early-warning system. During inference testing,
+                                the model consistently detected rats in external thermal video and successfully
+                                triggered the ultrasonic emitter module.</p>
+                        </div>
+
+                        <div>
+                            <h3 class="font-headline-h2 text-white mb-4 italic">What I'd Improve Next</h3>
+                            <ul class="list-disc pl-6 space-y-2 mb-8">
+                                <li>Deploy on a Raspberry Pi or Jetson Nano with an actual thermal camera for in-field
+                                    validation</li>
+                                <li>Extend detection to multiple pest species (snakes, insects) by expanding the dataset
+                                </li>
+                                <li>Build a mobile alert system so farmers receive real-time notifications on their
+                                    phones</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
                 <!-- Modal Body (ReplikaGO) -->
                 <div id="replikago-modal-content" class="p-8 md:p-16 relative hidden modal-body-content">
                     <span
