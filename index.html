@@ -227,14 +227,92 @@
         .project-card:hover .project-image-container {
             box-shadow: 0 0 30px rgba(255, 111, 97, 0.2);
         }
+
+        /* Custom Cursor Follower */
+        .cursor-dot {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 12px;
+            height: 12px;
+            background: #FF6F61;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+            transition: width 0.2s ease, height 0.2s ease, background 0.2s ease;
+            mix-blend-mode: screen;
+        }
+
+        .cursor-ring {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            border: 1.5px solid rgba(255, 111, 97, 0.5);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9998;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+        }
+
+        /* Expand effect when hovering interactive elements */
+        .cursor-dot.is-hover {
+            width: 8px;
+            height: 8px;
+            background: #FF8C42;
+        }
+
+        .cursor-ring.is-hover {
+            width: 60px;
+            height: 60px;
+            border-color: rgba(255, 140, 66, 0.6);
+        }
+
+        /* Click ripple */
+        .cursor-ripple {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9997;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 111, 97, 0.7);
+            transform: translate(-50%, -50%) scale(0);
+            animation: cursor-ripple-expand 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes cursor-ripple-expand {
+            0% {
+                width: 0px;
+                height: 0px;
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            100% {
+                width: 120px;
+                height: 120px;
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        /* Hide custom cursor on touch devices */
+        @media (hover: none) and (pointer: coarse) {
+
+            .cursor-dot,
+            .cursor-ring {
+                display: none;
+            }
+        }
     </style>
 </head>
 
 <body class="font-body-md text-on-surface selection:bg-electric-coral selection:text-black">
-    <!-- Vanta.js Background Canvas -->
-    <div id="vanta-bg" class="fixed inset-0 -z-30 pointer-events-none"></div>
-    <!-- Dark contrast layer for text readability -->
-    <div class="fixed inset-0 bg-[#050505]/80 backdrop-blur-[1px] -z-20 pointer-events-none"></div>
+    <!-- Custom Cursor Follower -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-ring" id="cursor-ring"></div>
     <!-- Atmospheric Liquid Blobs -->
     <div class="liquid-blob blob-orange"></div>
     <div class="liquid-blob blob-coral"></div>
@@ -276,12 +354,12 @@
                         ALICIA JUANITA LISAL
                     </span>
                     <h1 class="font-display-xl text-white mb-stack-lg leading-none">
-                        Full-Stack & AI Engineer <span class="italic font-headline-h1 text-soft-orange">building mobile
-                            apps, AR experiences, and data-driven systems</span>
+                        AI Engineer <span class="italic font-headline-h1 text-soft-orange">building machine learning
+                            systems, computer vision pipelines, and data-driven applications</span>
                     </h1>
                     <p class="font-body-lg text-primary max-w-2xl mb-stack-lg">
-                        I develop scalable applications using Flutter, Laravel, and Unity, with a focus on real-world
-                        problem solving and user-centered design.
+                        I build end-to-end ML systems using Python, scikit-learn, and PySpark — with a full-stack
+                        background to ship them into production.
                     </p>
                     <div class="flex gap-stack-md">
                         <a class="coral-button px-8 py-4 font-label-caps text-[14px] inline-flex items-center justify-center"
@@ -334,19 +412,31 @@
                         Am</span>
                     <h2 class="font-display-2xl text-white mb-stack-lg italic">The Narrative</h2>
                     <div class="space-y-stack-md font-body-lg text-primary">
-                        <p>I am an Informatics student specializing in
-                            <span class="text-white font-semibold">Artificial Intelligence</span> with hands-on
-                            experience in <span class="text-soft-orange font-semibold">building mobile and web
-                                applications</span>. My
-                            work includes developing <span class="text-white font-semibold">REST APIs</span>, designing
-                            relational databases, and creating <span class="text-white font-semibold">AR-based
-                                applications</span> using Unity.
+                        <p>
+                            I am an Informatics student specializing in
+                            <span class="text-white font-semibold">Artificial Intelligence</span>,
+                            with experience building
+                            <span class="text-soft-orange font-semibold">end-to-end machine learning systems from data
+                                to deployment</span>.
+                            My interests include
+                            <span class="text-white font-semibold">Computer Vision</span>,
+                            <span class="text-white font-semibold">Recommendation Systems</span>,
+                            and
+                            <span class="text-white font-semibold">Predictive Analytics</span>.
                         </p>
-                        <p>I combine technical expertise with creative problem-solving to deliver <span
-                                class="text-soft-orange font-semibold">high-quality software
-                                solutions</span>. My goal is to leverage technology to create <span
-                                class="text-white font-semibold">meaningful impact</span> and seamless user
-                            experiences with empathy.</p>
+
+                        <p>
+                            I have worked on a
+                            <span class="text-soft-orange font-semibold">YOLOv11 thermal rat detection system</span>,
+                            a <span class="text-white font-semibold">PySpark Random Forest pipeline</span>,
+                            an <span class="text-white font-semibold">AutoML workflow with TPOT</span>,
+                            and a <span class="text-soft-orange font-semibold">Weighted KNN recommendation microservice
+                                (FastAPI)</span>.
+                            My stack includes
+                            <span class="text-soft-orange font-semibold">Python, FastAPI, Flutter, Laravel, PostgreSQL,
+                                Docker, and Unity</span>,
+                            focusing on building practical, end-to-end AI solutions.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -362,53 +452,377 @@
                     </div>
                     <span class="magazine-number text-soft-orange">01</span>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-24 relative z-10">
-                    <div class="group">
-                        <h3
-                            class="font-label-caps text-electric-coral mb-stack-lg text-sm group-hover:text-soft-orange transition-colors">
-                            SKILLS</h3>
-                        <ul class="space-y-4 font-headline-h2 text-primary-fixed-dim text-3xl">
-                            <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
-                                REST API</li>
-                            <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
-                                Full-Stack Development</li>
-                            <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
-                                Machine Learning</li>
-                            <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
-                                Database Design</li>
-                        </ul>
-                    </div>
-                    <div class="group">
-                        <h3
-                            class="font-label-caps text-electric-coral mb-stack-lg text-sm group-hover:text-soft-orange transition-colors">
-                            TECHNOLOGIES</h3>
-                        <ul class="space-y-4 font-headline-h2 text-primary-fixed-dim text-3xl">
-                            <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
-                                Flutter</li>
-                            <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
-                                Laravel</li>
-                            <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
-                                Tailwind CSS</li>
-                            <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
-                                Unity / Vuforia</li>
-                        </ul>
-                    </div>
-                    <div class="group">
-                        <h3
-                            class="font-label-caps text-electric-coral mb-stack-lg text-sm group-hover:text-soft-orange transition-colors">
-                            TOOLS</h3>
-                        <ul class="space-y-4 font-headline-h2 text-primary-fixed-dim text-3xl">
-                            <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
-                                Git / GitHub</li>
-                            <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
-                                Figma</li>
-                            <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
-                                Google Colab</li>
-                            <li class="hover:text-white hover:translate-x-2 transition-all duration-300 cursor-default">
-                                Vercel</li>
-                        </ul>
+                <!-- Logo Ticker Styles -->
+                <style>
+                    .ticker-row {
+                        position: relative;
+                        overflow: hidden;
+                        /* Fade edges via CSS mask */
+                        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+                        mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+                        cursor: grab;
+                        user-select: none;
+                        -webkit-user-select: none;
+                    }
+
+                    .ticker-row:active {
+                        cursor: grabbing;
+                    }
+
+                    .ticker-track {
+                        display: flex;
+                        width: max-content;
+                        will-change: transform;
+                    }
+
+                    /* Row 1: scroll left (negative direction) */
+                    .ticker-track--left {
+                        animation: ticker-left 30s linear infinite;
+                    }
+
+                    /* Row 2: scroll right (positive direction) */
+                    .ticker-track--right {
+                        animation: ticker-right 30s linear infinite;
+                    }
+
+                    @keyframes ticker-left {
+                        0% {
+                            transform: translateX(0);
+                        }
+
+                        100% {
+                            transform: translateX(-50%);
+                        }
+                    }
+
+                    @keyframes ticker-right {
+                        0% {
+                            transform: translateX(-50%);
+                        }
+
+                        100% {
+                            transform: translateX(0);
+                        }
+                    }
+
+                    /* Pause animation on hover */
+                    .ticker-row:hover .ticker-track,
+                    .ticker-row.is-dragging .ticker-track {
+                        animation-play-state: paused;
+                    }
+
+                    /* Individual logo item */
+                    .ticker-item {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 10px;
+                        min-width: 120px;
+                        padding: 20px 24px;
+                        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
+                        flex-shrink: 0;
+                    }
+
+                    .ticker-item:hover {
+                        transform: scale(1.15);
+                    }
+
+                    .ticker-item:hover .ticker-name {
+                        color: #ffffff;
+                    }
+
+                    .ticker-item:hover .ticker-icon {
+                        filter: brightness(1.4);
+                    }
+
+                    .ticker-icon {
+                        width: 40px;
+                        height: 40px;
+                        object-fit: contain;
+                        filter: brightness(0.85);
+                        transition: filter 0.3s ease;
+                    }
+
+                    .ticker-name {
+                        font-family: 'Space Grotesk', sans-serif;
+                        font-size: 11px;
+                        letter-spacing: 0.05em;
+                        color: #a1a1aa;
+                        /* zinc-400 */
+                        text-align: center;
+                        white-space: nowrap;
+                        transition: color 0.3s ease;
+                    }
+                </style>
+
+                <!-- Row 1: ML / DATA -->
+                <div class="relative z-10 mb-12">
+                    <span
+                        class="font-label-caps text-electric-coral text-sm block mb-4 px-0 md:px-0 tracking-widest uppercase">ML
+                        / DATA</span>
+                    <div class="ticker-row" id="ticker-row-1">
+                        <div class="ticker-track ticker-track--left" id="ticker-track-1">
+                            <!-- Set 1 -->
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/python/white" alt="Python">
+                                <span class="ticker-name">Python</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/scikitlearn/white"
+                                    alt="scikit-learn">
+                                <span class="ticker-name">scikit-learn</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/ultralytics/white"
+                                    alt="YOLOv11">
+                                <span class="ticker-name">YOLOv11</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/apachespark/white"
+                                    alt="PySpark">
+                                <span class="ticker-name">PySpark</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/pandas/white" alt="Pandas">
+                                <span class="ticker-name">Pandas</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/numpy/white" alt="NumPy">
+                                <span class="ticker-name">NumPy</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/opencv/white" alt="OpenCV">
+                                <span class="ticker-name">OpenCV</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/tensorflow/white"
+                                    alt="TensorFlow">
+                                <span class="ticker-name">TensorFlow</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/jupyter/white" alt="Jupyter">
+                                <span class="ticker-name">Jupyter</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/googlecolab/white"
+                                    alt="Google Colab">
+                                <span class="ticker-name">Google Colab</span>
+                            </div>
+                            <!-- Set 2 (duplicate for seamless loop) -->
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/python/white" alt="Python">
+                                <span class="ticker-name">Python</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/scikitlearn/white"
+                                    alt="scikit-learn">
+                                <span class="ticker-name">scikit-learn</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/ultralytics/white"
+                                    alt="YOLOv11">
+                                <span class="ticker-name">YOLOv11</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/apachespark/white"
+                                    alt="PySpark">
+                                <span class="ticker-name">PySpark</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/pandas/white" alt="Pandas">
+                                <span class="ticker-name">Pandas</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/numpy/white" alt="NumPy">
+                                <span class="ticker-name">NumPy</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/opencv/white" alt="OpenCV">
+                                <span class="ticker-name">OpenCV</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/tensorflow/white"
+                                    alt="TensorFlow">
+                                <span class="ticker-name">TensorFlow</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/jupyter/white" alt="Jupyter">
+                                <span class="ticker-name">Jupyter</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/googlecolab/white"
+                                    alt="Google Colab">
+                                <span class="ticker-name">Google Colab</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Row 2: FULL-STACK / TOOLS -->
+                <div class="relative z-10">
+                    <span
+                        class="font-label-caps text-electric-coral text-sm block mb-4 px-0 md:px-0 tracking-widest uppercase">FULL-STACK
+                        / TOOLS</span>
+                    <div class="ticker-row" id="ticker-row-2">
+                        <div class="ticker-track ticker-track--right" id="ticker-track-2">
+                            <!-- Set 1 -->
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/flutter/white" alt="Flutter">
+                                <span class="ticker-name">Flutter</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/laravel/white" alt="Laravel">
+                                <span class="ticker-name">Laravel</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/unity/white" alt="Unity">
+                                <span class="ticker-name">Unity</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/github/white" alt="GitHub">
+                                <span class="ticker-name">GitHub</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/figma/white" alt="Figma">
+                                <span class="ticker-name">Figma</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/docker/white" alt="Docker">
+                                <span class="ticker-name">Docker</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/fastapi/white" alt="FastAPI">
+                                <span class="ticker-name">FastAPI</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/mysql/white" alt="MySQL">
+                                <span class="ticker-name">MySQL</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/tailwindcss/white"
+                                    alt="Tailwind CSS">
+                                <span class="ticker-name">Tailwind CSS</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/vercel/white" alt="Vercel">
+                                <span class="ticker-name">Vercel</span>
+                            </div>
+                            <!-- Set 2 (duplicate for seamless loop) -->
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/flutter/white" alt="Flutter">
+                                <span class="ticker-name">Flutter</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/laravel/white" alt="Laravel">
+                                <span class="ticker-name">Laravel</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/unity/white" alt="Unity">
+                                <span class="ticker-name">Unity</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/github/white" alt="GitHub">
+                                <span class="ticker-name">GitHub</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/figma/white" alt="Figma">
+                                <span class="ticker-name">Figma</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/docker/white" alt="Docker">
+                                <span class="ticker-name">Docker</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/fastapi/white" alt="FastAPI">
+                                <span class="ticker-name">FastAPI</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/mysql/white" alt="MySQL">
+                                <span class="ticker-name">MySQL</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/tailwindcss/white"
+                                    alt="Tailwind CSS">
+                                <span class="ticker-name">Tailwind CSS</span>
+                            </div>
+                            <div class="ticker-item">
+                                <img class="ticker-icon" src="https://cdn.simpleicons.org/vercel/white" alt="Vercel">
+                                <span class="ticker-name">Vercel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drag / Touch Scroll Script -->
+                <script>
+                        (function () {
+                            document.querySelectorAll('.ticker-row').forEach(row => {
+                                const track = row.querySelector('.ticker-track');
+                                let isDragging = false;
+                                let startX = 0;
+                                let scrollOffset = 0;
+                                let currentTranslate = 0;
+                                let animationPausedTranslate = 0;
+
+                                function getComputedTranslateX(el) {
+                                    const style = window.getComputedStyle(el);
+                                    const matrix = style.transform || style.webkitTransform;
+                                    if (matrix && matrix !== 'none') {
+                                        const values = matrix.match(/matrix\((.+)\)/);
+                                        if (values) {
+                                            const parts = values[1].split(',');
+                                            return parseFloat(parts[4]);
+                                        }
+                                    }
+                                    return 0;
+                                }
+
+                                function onDragStart(e) {
+                                    isDragging = true;
+                                    row.classList.add('is-dragging');
+                                    startX = (e.type.includes('touch') ? e.touches[0].clientX : e.clientX);
+                                    // Capture where the CSS animation left off
+                                    animationPausedTranslate = getComputedTranslateX(track);
+                                    currentTranslate = animationPausedTranslate;
+                                    scrollOffset = 0;
+                                }
+
+                                function onDragMove(e) {
+                                    if (!isDragging) return;
+                                    e.preventDefault();
+                                    const x = (e.type.includes('touch') ? e.touches[0].clientX : e.clientX);
+                                    const diff = x - startX;
+                                    scrollOffset = diff;
+                                    currentTranslate = animationPausedTranslate + scrollOffset;
+                                    track.style.transform = `translateX(${currentTranslate}px)`;
+                                }
+
+                                function onDragEnd() {
+                                    if (!isDragging) return;
+                                    isDragging = false;
+                                    row.classList.remove('is-dragging');
+                                    // Let CSS animation resume from where it was
+                                    track.style.transform = '';
+                                }
+
+                                // Mouse events
+                                row.addEventListener('mousedown', onDragStart);
+                                window.addEventListener('mousemove', onDragMove);
+                                window.addEventListener('mouseup', onDragEnd);
+
+                                // Touch events
+                                row.addEventListener('touchstart', onDragStart, { passive: true });
+                                row.addEventListener('touchmove', onDragMove, { passive: false });
+                                row.addEventListener('touchend', onDragEnd);
+
+                                // Prevent image dragging
+                                row.querySelectorAll('img').forEach(img => {
+                                    img.addEventListener('dragstart', e => e.preventDefault());
+                                });
+                            });
+                        })();
+                </script>
             </div>
             <!-- Inner Section Glow -->
             <div
@@ -1393,30 +1807,83 @@
             </div>
         </div>
     </footer>
-    <!-- Vanta.js Animated Background Dependencies -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
     <script>
-        // Initialize Vanta Net Background Animation (using theme-specific HSL orange/coral color)
-        try {
-            VANTA.NET({
-                el: "#vanta-bg",
-                mouseControls: true,
-                touchControls: true,
-                gyroControls: false,
-                minHeight: 200.00,
-                minWidth: 200.00,
-                scale: 1.00,
-                scaleMobile: 1.00,
-                color: 0xff6f61, // Electric Coral
-                backgroundColor: 0x050505, // Black theme color
-                points: 10.00,
-                maxDistance: 20.00,
-                spacing: 16.00
+        // Custom Cursor Follower
+        (function () {
+            const dot = document.getElementById('cursor-dot');
+            const ring = document.getElementById('cursor-ring');
+            if (!dot || !ring) return;
+
+            let mouseX = -100, mouseY = -100;
+            let dotX = -100, dotY = -100;
+            let ringX = -100, ringY = -100;
+            let isVisible = false;
+
+            // Track mouse position
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                if (!isVisible) {
+                    isVisible = true;
+                    dot.style.opacity = '1';
+                    ring.style.opacity = '1';
+                }
             });
-        } catch (err) {
-            console.warn("Vanta.js background failed to load: ", err);
-        }
+
+            // Hide when mouse leaves window
+            document.addEventListener('mouseleave', () => {
+                isVisible = false;
+                dot.style.opacity = '0';
+                ring.style.opacity = '0';
+            });
+
+            // Hover detection for interactive elements
+            const hoverTargets = 'a, button, input, textarea, select, [role="button"], .project-card, .ticker-item, .coral-button, .ghost-button';
+            document.addEventListener('mouseover', (e) => {
+                if (e.target.closest(hoverTargets)) {
+                    dot.classList.add('is-hover');
+                    ring.classList.add('is-hover');
+                }
+            });
+            document.addEventListener('mouseout', (e) => {
+                if (e.target.closest(hoverTargets)) {
+                    dot.classList.remove('is-hover');
+                    ring.classList.remove('is-hover');
+                }
+            });
+
+            // Click ripple animation
+            document.addEventListener('click', (e) => {
+                const ripple = document.createElement('div');
+                ripple.className = 'cursor-ripple';
+                ripple.style.left = e.clientX + 'px';
+                ripple.style.top = e.clientY + 'px';
+                document.body.appendChild(ripple);
+                ripple.addEventListener('animationend', () => ripple.remove());
+            });
+
+            // Smooth animation loop with lerp
+            function animate() {
+                // Dot follows closely (fast lerp)
+                dotX += (mouseX - dotX) * 0.35;
+                dotY += (mouseY - dotY) * 0.35;
+                dot.style.left = dotX + 'px';
+                dot.style.top = dotY + 'px';
+
+                // Ring follows with more delay (slow lerp)
+                ringX += (mouseX - ringX) * 0.15;
+                ringY += (mouseY - ringY) * 0.15;
+                ring.style.left = ringX + 'px';
+                ring.style.top = ringY + 'px';
+
+                requestAnimationFrame(animate);
+            }
+
+            // Start hidden until first mouse move
+            dot.style.opacity = '0';
+            ring.style.opacity = '0';
+            animate();
+        })();
 
         // Reveal Intersection Observer
         const observerOptions = {
